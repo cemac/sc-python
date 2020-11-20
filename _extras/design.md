@@ -195,7 +195,7 @@ I know...
     *   Given what we have seen so far,
         what index expression will get the last character in a string?
 
-### [Coffee]({{page.root}}/05-coffee/): 15 min (10:20)
+### [Coffee]({{page.root}}/05-break/): 15 min (10:20)
 
 ### [Libraries]({{page.root}}/06-libraries/) (10:35)
 
@@ -250,7 +250,7 @@ I know...
     *   Modify the example to create a scatter plot of GDP per capita in Asian countries.
     *   Explain what each argument to `plot` does in the following example.
 
-### [Lunch]({{page.root}}/10-lunch/) (12:15): 45 min
+### [Lunch]({{page.root}}/10-end-first-session/) (12:15): 45 min
 
 ### [Lists]({{page.root}}/11-lists/) (13:00)
 

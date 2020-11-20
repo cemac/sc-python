@@ -1,13 +1,11 @@
 ---
 layout: break
-title: "Afternoon Coffee"
+title: "Break"
 teaching: 0
 exercises: 0
 break: 15
 ---
-# Reflection exercise
-
-Over break, reflect on and discuss the following:
+During the break, you may wish to consider:
 * A common refrain in software engineering is "Don't Repeat Yourself". How do the techniques we've learned in the last
 lessons help us avoid repeating ourselves? _note that in practice there is some nuance to this and should be balanced
 with doing the simplest thing that could possibly work_
