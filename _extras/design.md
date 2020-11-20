@@ -346,10 +346,4 @@ I know...
 *   Challenges: 0 min
     *   None.
 
-### [Feedback]({{page.root}}/20-feedback/) (16:15)
-
-*   Teaching: 0 min
-*   Challenges: 15 min
-    *   Collect feedback
-
 ### Finish (16:30)
