@@ -13,7 +13,6 @@ keypoints:
 - "Use `else` to execute a block of code when an `if` condition is *not* true."
 - "Use `elif` to specify additional tests."
 - "Conditions are tested once, in order."
-- "Create a table showing variables' values to trace a program's execution."
 ---
 ## Use `if` statements to control whether or not a block of code is executed.
 
@@ -172,7 +171,11 @@ final velocity: 30.0
 ~~~
 {: .output}
 
-## Create a table showing variables' values to trace a program's execution.
+*   The program must have a `print` statement *outside* the body of the loop
+    to show the final value of `velocity`,
+    since its value is updated by the last iteration of the loop.
+
+This table shows the values of the variables as the program progresses:
 
 <table>
   <tr>
@@ -202,10 +205,6 @@ final velocity: 30.0
     <td>30.0</td>
   </tr>
 </table>
-
-*   The program must have a `print` statement *outside* the body of the loop
-    to show the final value of `velocity`,
-    since its value is updated by the last iteration of the loop.
 
 > ## Compound Relations Using `and`, `or`, and Parentheses
 >
