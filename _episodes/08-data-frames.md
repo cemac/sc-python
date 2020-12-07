@@ -1,6 +1,6 @@
 ---
 title: "Pandas DataFrames"
-teaching: 15
+teaching: 10
 exercises: 15
 questions:
 - "How can I do statistical analysis of tabular data?"

@@ -1,6 +1,6 @@
 ---
 title: "Plotting"
-teaching: 15
+teaching: 10
 exercises: 15
 questions:
 - "How can I plot my data?"
