@@ -3,7 +3,7 @@ layout: break
 title: "Break"
 teaching: 0
 exercises: 0
-break: 15
+break: 10
 ---
 During the break, you may wish to consider:
 * A common refrain in software engineering is "Don't Repeat Yourself". How do the techniques we've learned in the last

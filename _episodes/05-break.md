@@ -3,7 +3,7 @@ layout: break
 title: "Break"
 teaching: 0
 exercises: 0
-break: 15
+break: 10
 ---
 During the break, you may wish to consider:
 * What are the different kinds of errors Python will report?
