@@ -1,7 +1,7 @@
 ---
 title: "Plotting"
-teaching: 15
-exercises: 15
+teaching: 20
+exercises: 10
 questions:
 - "How can I plot my data?"
 objectives:
@@ -137,20 +137,6 @@ The `c=x` option sets the colour value of the scatter points based on the value 
 A title is added to the plot using `plt.title()`. The font size is set using the `fontsize` argument for the title, x axis label and y axis label. To set the font size for the tick labels, the `plt._tick_params()` function is used, where the size is set using the `labelsize` option. 
 
 A colour scale is added using the function `plt.colorbar()`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 > ## Saving your plot to a file
 > 
