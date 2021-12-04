@@ -40,6 +40,13 @@ keypoints:
 *   Variable names that start with underscores like `__alistairs_real_age` have a special meaning
     so we won't do that until we understand the convention.
 
+You can se the `%whos` command to find out information about variables set in the session.
+
+~~~
+%whos
+~~~
+{: .language-python}
+
 ## Use `print` to display values.
 
 *   Python has a built-in function called `print` that prints things as text.
@@ -80,7 +87,7 @@ NameError: name 'last_name' is not defined
 {: .error}
 
 *   The last line of an error message is usually the most informative.
-*   We will look at error messages in detail [later]({{ page.root }}/15-scope/#reading-error-messages).
+*   We will look at error messages in detail later.
 
 > ## Variables Persist Between Cells
 >
@@ -202,37 +209,6 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 
 *   Use meaningful variable names to help other people understand what the program does.
 *   The most important "other person" is your future self.
-
-> ## Swapping Values
->
-> Fill the table showing the values of the variables in this program
-> *after* each statement is executed.
->
-> ~~~
-> # Command  # Value of x   # Value of y   # Value of swap #
-> x = 1.0    #              #              #               #
-> y = 3.0    #              #              #               #
-> swap = x   #              #              #               #
-> x = y      #              #              #               #
-> y = swap   #              #              #               #
-> ~~~
-> {: .language-python}
-> > ## Solution
-> >
-> > ~~~
-> > # Command  # Value of x   # Value of y   # Value of swap #
-> > x = 1.0    # 1.0          # not defined  # not defined   #
-> > y = 3.0    # 1.0          # 3.0          # not defined   #
-> > swap = x   # 1.0          # 3.0          # 1.0           #
-> > x = y      # 3.0          # 3.0          # 1.0           #
-> > y = swap   # 3.0          # 1.0          # 1.0           #
-> > ~~~
-> > {: .output}
-> >
-> > These three lines exchange the values in `x` and `y` using the `swap`
-> > variable for temporary storage. This is a fairly common programming idiom.
->{: .solution}
-{: .challenge}
 
 > ## Predicting Values
 >
