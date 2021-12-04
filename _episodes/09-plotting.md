@@ -1,6 +1,6 @@
 ---
 title: "Plotting"
-teaching: 10
+teaching: 15
 exercises: 15
 questions:
 - "How can I plot my data?"
@@ -17,11 +17,10 @@ keypoints:
 ---
 ## [`matplotlib`](https://matplotlib.org/) is the most widely used scientific plotting library in Python.
 
-*   Commonly use a sub-library called [`matplotlib.pyplot`](https://matplotlib.org/api/pyplot_api.html).
-*   The Jupyter Notebook will render plots inline if we ask it to using a "magic" command.
+*   Commonly use a sub-library called [`matplotlib.pyplot`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot).
+*   The Jupyter Notebook will render plots inline by default.
 
 ~~~
-%matplotlib inline
 import matplotlib.pyplot as plt
 ~~~
 {: .language-python}
@@ -39,10 +38,29 @@ plt.ylabel('Position (km)')
 {: .language-python}
 
 ![Simple Position-Time Plot](../fig/9_simple_position_time_plot.svg)
-## Plot data directly from a [`Pandas dataframe`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
+
+> ## Display All Open Figures
+> 
+> In our Jupyter Notebook example, running the cell should generate the figure directly below the code. 
+> The figure is also included in the Notebook document for future viewing.
+> However, other Python environments like an interactive Python session started from a terminal 
+> or a Python script executed via the command line require an additional command to display the figure.
+>
+> Instruct `matplotlib` to show a figure:
+> ~~~
+> plt.show()
+> ~~~
+> {: .language-python}
+>
+> This command can also be used within a Notebook - for instance, to display multiple figures
+> if several are created by a single cell.
+>
+{: .callout}
+
+## Plot data directly from a [`Pandas dataframe`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html).
 
 *   We can also plot [Pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
-*   This implicitly uses [`matplotlib.pyplot`](https://matplotlib.org/api/pyplot_api.html).
+*   This implicitly uses [`matplotlib.pyplot`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot).
 *   Before plotting, we convert the column headings from a `string` to `integer` data type, since they represent numerical values
 
 ~~~
@@ -139,17 +157,19 @@ plt.ylabel('GDP per capita ($)')
 > plt.plot(years, gdp_australia, label='Australia')
 > plt.plot(years, gdp_nz, label='New Zealand')
 > ~~~
+> {: .language-python}
 >
 > * Instruct `matplotlib` to create the legend.
 >
 > ~~~
 > plt.legend()
 > ~~~
+> {: .language-python}
 >
 > By default matplotlib will attempt to place the legend in a suitable position. If you
 > would rather specify a position this can be done with the `loc=` argument, e.g to place
 > the legend in the upper left corner of the plot, specify `loc='upper left'`
-> {: .language-python}
+>
 {: .callout}
 
 
@@ -206,13 +226,13 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 > among the countries in Asia for each year in the data set.
 > What relationship do you see (if any)?
 >
-> ~~~
-> data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
-> data_asia.describe().T.plot(kind='scatter', x='min', y='max')
-> ~~~
-> {: .language-python}
 >
 > > ## Solution
+> > ~~~
+> > data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
+> > data_asia.describe().T.plot(kind='scatter', x='min', y='max')
+> > ~~~
+> > {: .language-python}
 > >
 > > ![Correlations Solution 1](../fig/9_correlations_solution1.svg)
 > >

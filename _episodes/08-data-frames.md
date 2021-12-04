@@ -1,6 +1,6 @@
 ---
 title: "Pandas DataFrames"
-teaching: 10
+teaching: 15
 exercises: 15
 questions:
 - "How can I do statistical analysis of tabular data?"
@@ -59,7 +59,6 @@ print(data.iloc[0, 0])
 *   Can specify location by row name analogously to 2D version of dictionary keys.
 
 ~~~
-data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 print(data.loc["Albania", "gdpPercap_1952"])
 ~~~
 {: .language-python}
@@ -298,7 +297,7 @@ dtype: float64
 {: .output}
 
 Finally, for each group in the `wealth_score` table, we sum their (financial) contribution
-across the years surveyed:
+across the years surveyed using chained methods:
 
 ~~~
 data.groupby(wealth_score).sum()
@@ -339,8 +338,6 @@ data.groupby(wealth_score).sum()
 > {: .language-python}
 >
 > Write an expression to find the Per Capita GDP of Serbia in 2007.
-{: .challenge}
->
 > > ## Solution
 > > The selection can be done by using the labels for both the row ("Serbia") and the column ("gdpPercap_2007"):
 > > ~~~
@@ -366,7 +363,6 @@ data.groupby(wealth_score).sum()
 > print(df.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
 > ~~~
 > {: .language-python}
-{: .challenge}
 > 
 > > ## Solution
 > > No, they do not produce the same output! The output of the first statement is:
@@ -406,7 +402,6 @@ data.groupby(wealth_score).sum()
 > fourth.to_csv('result.csv')
 > ~~~
 > {: .language-python}
-{: .challenge}
 >
 > > ## Solution
 > > Let's go through this piece of code line by line.
@@ -460,7 +455,6 @@ data.groupby(wealth_score).sum()
 > print(data.idxmax())
 > ~~~
 > {: .language-python}
-{: .challenge}
 >
 > > ## Solution
 > > For each column in `data`, `idxmin` will return the index value corresponding to each column's minimum;
@@ -480,7 +474,6 @@ data.groupby(wealth_score).sum()
 > 3.  GDP per capita for all countries for years *after* 1985.
 > 4.  GDP per capita for each country in 2007 as a multiple of 
 >     GDP per capita for that country in 1952.
-{: .challenge}
 >
 > > ## Solution
 > > 1:
@@ -510,46 +503,188 @@ data.groupby(wealth_score).sum()
 > {: .solution}
 {: .challenge}
 
-
-> ## Using the dir function to see available methods
+> ## Many Ways of Access
 >
-> Python includes a `dir` function that can be used to display all of the available methods (functions) that are built into a data object.  As an example, the  functions available for a [list data type](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists) are:
+> There are at least two ways of accessing a value or slice of a DataFrame: by name or index.
+> However, there are many others. For example, a single column or row can be accessed either as a `DataFrame`
+> or a `Series` object.
+>
+> Suggest different ways of doing the following operations on a DataFrame:
+> 1. Access a single column
+> 2. Access a single row
+> 3. Access an individual DataFrame element
+> 4. Access several columns
+> 5. Access several rows
+> 6. Access a subset of specific rows and columns
+> 7. Access a subset of row and column ranges
+>
+{: .challenge}
+>
+> > ## Solution
+> > 1\. Access a single column:
+> > ~~~
+> > # by name
+> > data["col_name"]   # as a Series
+> > data[["col_name"]] # as a DataFrame
+> >
+> > # by name using .loc
+> > data.T.loc["col_name"]  # as a Series
+> > data.T.loc[["col_name"]].T  # as a DataFrame
+> >
+> > # Dot notation (Series)
+> > data.col_name
+> >
+> > # by index (iloc)
+> > data.iloc[:, col_index]   # as a Series
+> > data.iloc[:, [col_index]] # as a DataFrame
+> >
+> > # using a mask
+> > data.T[data.T.index == "col_name"].T
+> > ~~~
+> > {: .language-python}
+> >
+> > 2\. Access a single row:
+> > ~~~
+> > # by name using .loc
+> > data.loc["row_name"] # as a Series
+> > data.loc[["row_name"]] # as a DataFrame
+> >
+> > # by name
+> > data.T["row_name"] # as a Series
+> > data.T[["row_name"]].T as a DataFrame
+> >
+> > # by index
+> > data.iloc[row_index]   # as a Series
+> > data.iloc[[row_index]]   # as a DataFrame
+> >
+> > # using mask
+> > data[data.index == "row_name"]
+> > ~~~
+> > {: .language-python}
+> >
+> > 3\. Access an individual DataFrame element:
+> > ~~~
+> > # by column/row names
+> > data["column_name"]["row_name"]         # as a Series
+> >
+> > data[["col_name"]].loc["row_name"]  # as a Series
+> > data[["col_name"]].loc[["row_name"]]  # as a DataFrame
+> >
+> > data.loc["row_name"]["col_name"]  # as a value
+> > data.loc[["row_name"]]["col_name"]  # as a Series
+> > data.loc[["row_name"]][["col_name"]]  # as a DataFrame
+> >
+> > data.loc["row_name", "col_name"]  # as a value
+> > data.loc[["row_name"], "col_name"]  # as a Series. Preserves index. Column name is moved to `.name`.
+> > data.loc["row_name", ["col_name"]]  # as a Series. Index is moved to `.name.` Sets index to column name.
+> > data.loc[["row_name"], ["col_name"]]  # as a DataFrame (preserves original index and column name)
+> >
+> > # by column/row names: Dot notation
+> > data.col_name.row_name
+> >
+> > # by column/row indices
+> > data.iloc[row_index, col_index] # as a value
+> > data.iloc[[row_index], col_index] # as a Series. Preserves index. Column name is moved to `.name`
+> > data.iloc[row_index, [col_index]] # as a Series. Index is moved to `.name.` Sets index to column name.
+> > data.iloc[[row_index], [col_index]] # as a DataFrame (preserves original index and column name)
+> >
+> > # column name + row index
+> > data["col_name"][row_index]
+> > data.col_name[row_index]
+> > data["col_name"].iloc[row_index]
+> >
+> > # column index + row name
+> > data.iloc[:, [col_index]].loc["row_name"]  # as a Series
+> > data.iloc[:, [col_index]].loc[["row_name"]]  # as a DataFrame
+> >
+> > # using masks
+> > data[data.index == "row_name"].T[data.T.index == "col_name"].T
+> > ~~~
+> > {: .language-python}
+> > 4\. Access several columns:
+> > ~~~
+> > # by name
+> > data[["col1", "col2", "col3"]]
+> > data.loc[:, ["col1", "col2", "col3"]]
+> >
+> > # by index
+> > data.iloc[:, [col1_index, col2_index, col3_index]]
+> > ~~~
+> > {: .language-python}
+> > 5\. Access several rows
+> > ~~~
+> > # by name
+> > data.loc[["row1", "row2", "row3"]]
+> >
+> > # by index
+> > data.iloc[[row1_index, row2_index, row3_index]]
+> > ~~~
+> > {: .language-python}
+> > 6\. Access a subset of specific rows and columns
+> > ~~~
+> > # by names
+> > data.loc[["row1", "row2", "row3"], ["col1", "col2", "col3"]]
+> >
+> > # by indices
+> > data.iloc[[row1_index, row2_index, row3_index], [col1_index, col2_index, col3_index]]
+> >
+> > # column names + row indices
+> > data[["col1", "col2", "col3"]].iloc[[row1_index, row2_index, row3_index]]
+> >
+> > # column indices + row names
+> > data.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
+> > ~~~
+> > {: .language-python}
+> > 7\. Access a subset of row and column ranges
+> > ~~~
+> > # by name
+> > data.loc["row1":"row2", "col1":"col2"]
+> >
+> > # by index
+> > data.iloc[row1_index:row2_index, col1_index:col2_index]
+> >
+> > # column names + row indices
+> > data.loc[:, "col1_name":"col2_name"].iloc[row1_index:row2_index]
+> >
+> > # column indices + row names
+> > data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+> ## Exploring available methods using the `dir()` function
+>
+> Python includes a `dir()` function that can be used to display all of the available methods (functions) that are built into a data object.  In Episode 4, we used some methods with a string. But we can see many more are available by using `dir()`:
+>
 > ~~~
-> potatoes = ["Russet", "Norkota", "Yukon Gold", "Pontiac"]
-> dir(potatoes)
+> my_string = 'Hello world!'   # creation of a string object 
+> dir(my_string)
 > ~~~
 > {: .language-python}
 >
 > This command returns:
+>
 > ~~~
 > ['__add__',
 > ...
 > '__subclasshook__',
->  'append',
->  'clear',
->  'copy',
->  'count',
-> 'extend',
-> 'index',
-> 'insert',
-> 'pop',
-> 'remove',
-> 'reverse',
-> 'sort']
+> 'capitalize',
+> 'casefold',
+> 'center',
+> ...
+> 'upper',
+> 'zfill']
 > ~~~
 > {: .language-python}
 >
-> The double underscore functions can be ignored for now; functions that are not surrounded by double underscores are the *public interface* of the [list type](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists). So, if you want to sort the list of potatoes, according to `dir` you should try,
-> ~~~
-> potatoes.sort()
-> ~~~
-> {: .language-python}
+> You can use `help()` or <kbd>Shift</kbd>+<kbd>Tab</kbd> to get more information about what these methods do.
 >
-> Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded as `data`.  Then, use `dir` to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.  
-{: .challenge}
+> Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded as `data`.  Then, use `dir()` 
+> to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.
 >
 > > ## Solution
-> > Among many choices, dir lists the `median()` function as a possibility.  Thus,
+> > Among many choices, `dir()` lists the `median()` function as a possibility.  Thus,
 > > ~~~
 > > data.median()
 > > ~~~
