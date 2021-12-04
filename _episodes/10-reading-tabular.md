@@ -8,6 +8,7 @@ objectives:
 - "Import the Pandas library."
 - "Use Pandas to load a simple CSV data set."
 - "Get some basic information about a Pandas DataFrame."
+- "Plot the data in a Pandas DataFrame."
 keypoints:
 - "Use the Pandas library to get basic statistics out of tabular data."
 - "Use `index_col` to specify that a column's values should be used as row headings."
@@ -15,6 +16,7 @@ keypoints:
 - "The `DataFrame.columns` variable stores information about the dataframe's columns."
 - "Use `DataFrame.T` to transpose a dataframe."
 - "Use `DataFrame.describe` to get summary statistics about data."
+- "Use `DataFrame.plot` to plot the data."
 ---
 ## Use the Pandas library to do statistics on tabular data.
 
@@ -205,10 +207,10 @@ print(data.describe())
 {: .language-python}
 ~~~
        Temperature  Relative Humidity
-count  8622.000000        8622.000000
-mean     15.823394          57.947344
-std       0.838543           2.090802
-min      14.100000           7.000000
+count  8621.000000        8621.000000
+mean     15.823396          57.953254
+std       0.838591           2.017624
+min      14.100000          53.800000
 25%      15.100000          56.400000
 50%      15.800000          58.800000
 75%      16.500000          59.700000

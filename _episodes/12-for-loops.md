@@ -1,6 +1,6 @@
 ---
 title: "For Loops"
-teaching: 10
+teaching: 15
 exercises: 15
 questions:
 - "How can I make a program do many things?"
@@ -186,31 +186,6 @@ print(total)
 > {: .solution}
 {: .challenge}
 
-> ## Tracing Execution
->
-> Create a table showing the numbers of the lines that are executed when this program runs,
-> and the values of the variables after each line is executed.
->
-> ~~~
-> total = 0
-> for char in "tin":
->     total = total + 1
-> ~~~
-> {: .language-python}
-> > ## Solution
-> >
-> > | Line no | Variables            |
-> > |---------|----------------------|
-> > | 1       | total = 0            |
-> > | 2       | total = 0 char = 't' |
-> > | 3       | total = 1 char = 't' |
-> > | 2       | total = 1 char = 'i' |
-> > | 3       | total = 2 char = 'i' |
-> > | 2       | total = 2 char = 'n' |
-> > | 3       | total = 3 char = 'n' |
-> {: .solution}
-{: .challenge}
-
 > ## Reversing a String
 >
 > Fill in the blanks in the program below so that it prints "nit"
@@ -307,36 +282,6 @@ print(total)
 > > for word in ["red", "green", "blue"]:
 > >     acronym = acronym + word[0].upper()
 > > print(acronym)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
-
-> ## Cumulative Sum
->
-> Reorder and properly indent the lines of code below
-> so that they print a list with the cumulative sum of data.
-> The result should be `[1, 3, 5, 10]`.
->
-> ~~~
-> cumulative.append(total)
-> for number in data:
-> cumulative = []
-> total += number
-> total = 0
-> print(cumulative)
-> data = [1,2,2,5]
-> ~~~
-> {: .language-python}
-> > ## Solution
-> > ~~~
-> > total = 0
-> > data = [1,2,2,5]
-> > cumulative = []
-> > for number in data:
-> >     total += number
-> >     cumulative.append(total)
-> > print(cumulative)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
