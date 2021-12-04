@@ -1,6 +1,6 @@
 ---
 title: "Variables and Assignment"
-teaching: 10
+teaching: 15
 exercises: 10
 questions:
 - "How can I store data in programs?"
@@ -39,13 +39,6 @@ keypoints:
     * are **case sensitive** (age, Age and AGE are three different variables)
 *   Variable names that start with underscores like `__alistairs_real_age` have a special meaning
     so we won't do that until we understand the convention.
-
-You can se the `%whos` command to find out information about variables set in the session.
-
-~~~
-%whos
-~~~
-{: .language-python}
 
 ## Use `print` to display values.
 

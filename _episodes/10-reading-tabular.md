@@ -1,5 +1,5 @@
 ---
-title: "Reading Tabular Data into DataFrames"
+title: "Reading Tabular Data with Pandas"
 teaching: 10
 exercises: 10
 questions:
