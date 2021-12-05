@@ -128,7 +128,7 @@ plt.savefig('plot2.svg')
 ~~~
 {: .language-python}
 
-![Sin and Cos Plot 2](../fig/9_sin_scatter.svg)
+![Sin Scatter Plot](../fig/9_sin_scatter.svg)
 
 Each plotting function in Matplotlib has its own set of argmuents. The documentation for the `scatter()` function can be found [here](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html).
 
@@ -168,3 +168,23 @@ A colour scale is added using the function `plt.colorbar()`.
 > * Similarly, you should make your graph elements easy to see. Use `s` to increase the size of your scatterplot markers and `linewidth` to increase the sizes of your plot lines.
 > * Using color (and nothing else) to distinguish between different plot elements will make your plots unreadable to anyone who is colorblind, or who happens to have a black-and-white office printer. For lines, the `linestyle` parameter lets you use different types of lines. For scatterplots, `marker` lets you change the shape of your points. If you're unsure about your colors, you can use [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) or [Color Oracle](https://colororacle.org/) to simulate what your plots would look like to those with colorblindness.
 {: .callout}
+
+> ## Colour scales
+>
+> Try and recreate the scatter plot for `cos(x)`, and see if you can change the colour scale to 'jet'.
+>
+> More information about Matplotlib colour maps can be found [here](https://matplotlib.org/stable/tutorials/colors/colormaps.html).
+> {: .language-python}
+> > ## Solution
+> > ~~~
+> > plt.scatter(x, cos_x, c=x, s=x*3, cmap='jet')
+> > plt.xlabel('x', fontsize=16)
+> > plt.ylabel('sin(x)', fontsize=16)
+> > plt.title('Cosine plot', fontsize=18)
+> > plt.tick_params(labelsize=14)
+> > plt.colorbar()
+> > ~~~
+> > {: .language-python}
+> > ![Cos Scatter Plot](../fig/9_cos_scatter.svg)
+> {: .solution}
+{: .challenge}
