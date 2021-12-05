@@ -1,7 +1,7 @@
 ---
 title: "Variable Scope"
 teaching: 10
-exercises: 10
+exercises: 5
 questions:
 - "How do function calls actually work?"
 - "How can I determine where errors occurred?"
@@ -55,23 +55,6 @@ Traceback (most recent call last):
 NameError: name 'temperature' is not defined
 ~~~
 {: .error}
-
-> ## Local and Global Variable Use
->
-> Trace the values of all variables in this program as it is executed.
-> (Use '---' as the value of variables before and after they exist.)
->
-> ~~~
-> limit = 100
->
-> def clip(value):
->     return min(max(0.0, value), limit)
->
-> value = -22.5
-> print(clip(value))
-> ~~~
-> {: .language-python}
-{: .challenge}
 
 > ## Reading Error Messages
 >

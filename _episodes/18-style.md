@@ -1,7 +1,7 @@
 ---
 title: "Programming Style"
-teaching: 15
-exercises: 15
+teaching: 10
+exercises: 5
 questions:
 - "How can I make my programs more readable?"
 - "How do most programmers format their code?"
@@ -91,33 +91,6 @@ average(values)
 > {: .language-python}
 {: .callout}
 
-> ## What Will Be Shown?
->
-> Highlight the lines in the code below that will be available as online help.
-> Are there lines that should be made available, but won't be?
-> Will any lines produce a syntax error or a runtime error?
->
-> ~~~
-> "Find maximum edit distance between multiple sequences."
-> # This finds the maximum distance between all sequences.
->
-> def overall_max(sequences):
->     '''Determine overall maximum edit distance.'''
-> 
->     highest = 0
->     for left in sequences:
->         for right in sequences:
->             '''Avoid checking sequence against itself.'''
->             if left != right:
->                 this = edit_distance(left, right)
->                 highest = max(highest, this)
-> 
->     # Report.
->     return highest
-> ~~~
-> {: .language-python}
-{: .challenge}
-
 > ## Document This
 >
 > Turn the comment in the following function into a docstring
@@ -143,84 +116,5 @@ average(values)
 > >     return values[1]
 > > ~~~
 > > {: .language-python}
-> {: .solution}
-{: .challenge}
-
-> ## Clean Up This Code
->
-> 1. Read this short program and try to predict what it does.
-> 2. Run it: how accurate was your prediction?
-> 3. Refactor the program to make it more readable.
->    Remember to run it after each change to ensure its behavior hasn't changed.
-> 4. Compare your rewrite with your neighbor's.
->    What did you do the same?
->    What did you do differently, and why?
->
-> ~~~
-> n = 10
-> s = 'et cetera'
-> print(s)
-> i = 0
-> while i < n:
->     # print('at', j)
->     new = ''
->     for j in range(len(s)):
->         left = j-1
->         right = (j+1)%len(s)
->         if s[left]==s[right]: new += '-'
->         else: new += '*'
->     s=''.join(new)
->     print(s)
->     i += 1
-> ~~~
-> {: .language-python}
->
-> > ## Solution
-> >
-> > Here's one solution.
-> >
-> > ~~~
-> > def string_machine(input_string, iterations):
-> >     """
-> >     Takes input_string and generates a new string with -'s and *'s
-> >     corresponding to characters that have identical adjacent characters
-> >     or not, respectively.  Iterates through this procedure with the resultant
-> >     strings for the supplied number of iterations.
-> >     """
-> >     print(input_string)
-> >     input_string_length = len(input_string)
-> >     old = input_string
-> >     for i in range(iterations):
-> >         new = ''
-> >         # iterate through characters in previous string
-> >         for j in range(input_string_length):
-> >             left = j-1
-> >             right = (j+1) % input_string_length  # ensure right index wraps around
-> >             if old[left] == old[right]:
-> >                 new += '-'
-> >             else:
-> >                 new += '*'
-> >         print(new)
-> >         # store new string as old
-> >         old = new     
-> >
-> > string_machine('et cetera', 10)
-> > ~~~
-> > {: .language-python}
-> > 
-> > ~~~
-> > et cetera
-> > *****-***
-> > ----*-*--
-> > ---*---*-
-> > --*-*-*-*
-> > **-------
-> > ***-----*
-> > --**---**
-> > *****-***
-> > ----*-*--
-> > ---*---*-
-> > ~~~
-> > {: .output}
 > {: .solution}
 {: .challenge}
