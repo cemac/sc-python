@@ -14,7 +14,7 @@ as well. Please note that this lesson uses Python 3.
 >
 > 1. Please make sure you have [installed any required software]({{page.root}}/setup)
 >
-> 2. Please download and extract the file [python-novice-gapminder-data.zip]({{page.root}}/files/python-novice-gapminder-data.zip).
+> 2. Please download and extract the file [python-data.zip]({{page.root}}/files/python-data.zip).
 {: .prereq}
 
 {% include links.md %}
