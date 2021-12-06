@@ -124,7 +124,6 @@ plt.ylabel('sin(x)', fontsize=16)
 plt.title('sine plot', fontsize=18)
 plt.tick_params(labelsize=14)
 plt.colorbar()
-plt.savefig('plot2.svg')
 ~~~
 {: .language-python}
 

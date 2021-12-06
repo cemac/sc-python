@@ -50,7 +50,7 @@ print(data)
 8620  2021-11-26 23:59:44         14.1               57.4
 8621  2021-11-26 23:59:54         14.2               57.4
 
-[8622 rows x 3 columns]
+[8621 rows x 3 columns]
 ~~~
 {: .output}
 
@@ -98,7 +98,7 @@ Date
 2021-11-26 23:59:44         14.1               57.4
 2021-11-26 23:59:54         14.2               57.4
 
-[8622 rows x 2 columns]
+[8621 rows x 2 columns]
 ~~~
 {: .output}
 
@@ -110,12 +110,12 @@ data.info()
 {: .language-python}
 ~~~
 <class 'pandas.core.frame.DataFrame'>
-Index: 8622 entries, 2021-11-26 00:00:08 to 2021-11-26 23:59:54
+Index: 8621 entries, 2021-11-26 00:00:08 to 2021-11-26 23:59:54
 Data columns (total 2 columns):
  #   Column             Non-Null Count  Dtype  
 ---  ------             --------------  -----  
- 0   Temperature        8622 non-null   float64
- 1   Relative Humidity  8622 non-null   float64
+ 0   Temperature        8621 non-null   float64
+ 1   Relative Humidity  8621 non-null   float64
 dtypes: float64(2)
 memory usage: 460.1+ KB
 ~~~
@@ -193,7 +193,7 @@ Date               2021-11-26 23:59:44  2021-11-26 23:59:54
 Temperature                       14.1                 14.2  
 Relative Humidity                 57.4                 57.4  
 
-[2 rows x 8622 columns]
+[2 rows x 8621 columns]
 ~~~
 {: .output}
 
@@ -240,7 +240,7 @@ Date
 2021-11-26 23:59:34    57.4
 2021-11-26 23:59:44    57.4
 2021-11-26 23:59:54    57.4
-Name: Relative Humidity, Length: 8622, dtype: float64
+Name: Relative Humidity, Length: 8621, dtype: float64
 ~~~
 {: .output}
 
@@ -261,7 +261,7 @@ Index(['2021-11-26 00:00:08', '2021-11-26 00:00:18', '2021-11-26 00:00:28',
        '2021-11-26 23:58:54', '2021-11-26 23:59:04', '2021-11-26 23:59:14',
        '2021-11-26 23:59:24', '2021-11-26 23:59:34', '2021-11-26 23:59:44',
        '2021-11-26 23:59:54'],
-      dtype='object', name='Date', length=8622)
+      dtype='object', name='Date', length=8621)
 ~~~
 {: .output}
 
