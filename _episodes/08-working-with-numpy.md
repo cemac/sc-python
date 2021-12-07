@@ -126,14 +126,14 @@ The `sequence` list is converted to a NumPy `ndarray` during this process.
 NumPy arrays can have multiple dimensions:
 
 ~~~
-values = np.array([[0, 1, 2], [3, 4, 5]])
+values = np.array([[0, 7, 2], [4, 4, 5]])
 print(values)
 print(values.shape)
 ~~~
 {: .language-python}
 ~~~
-[[0 1 2]
- [3 4 5]]
+[[0 7 2]
+ [4 4 5]]
 (2, 3)
 ~~~
 {: .output}
@@ -162,9 +162,9 @@ print(values[1, 2])
 > {: .language-python}
 > > ## Solution
 > > ~~~
-> > 5
-> > [3 4 5]
-> > [2 5]
+> > 7
+> > [4 7 5]
+> > [7 5]
 > > ~~~
 > > {: .language-python}
 > > The first command returns the maximum value from the whole array.
@@ -178,22 +178,22 @@ print(values[1, 2])
 > What is the data type of the `values` array, and how could the array be created with a different data type, e.g. `np.float32`?
 > > ## Solution
 > > ~~~
-> > values = np.array([[0, 1, 2], [3, 4, 5]])
+> > values = np.array([[0, 7, 2], [4, 4, 5]])
 > > print(values.dtype)
 > > print(values)
 > > 
-> > values = np.array([[0, 1, 2], [3, 4, 5]], dtype=np.float32)
+> > values = np.array([[0, 7, 2], [4, 4, 5]], dtype=np.float32)
 > > print(values.dtype)
 > > print(values)
 > > ~~~
 > > {: .language-python}
 > > ~~~
 > > int64
-> > [[0 1 2]
-> >  [3 4 5]]
+> > [[0 7 2]
+> >  [4 4 5]]
 > > float32
-> > [[0. 1. 2.]
-> >  [3. 4. 5.]]
+> > [[0. 7. 2.]
+> >  [4. 4. 5.]]
 > > ~~~
 > > {: .output}
 > > The `dtype` argument can be used to specify the data type when creating a NumPy array.

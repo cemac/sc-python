@@ -118,12 +118,14 @@ plt.legend(loc='lower left')
 Matplotlib is capable of making many type of plots. We can create a scatter plot of the `sin(x)` values:
 
 ~~~
+plt.figure(figsize=(10, 8))
 plt.scatter(x, sin_x, c=x, s=x*3)
 plt.xlabel('x', fontsize=16)
 plt.ylabel('sin(x)', fontsize=16)
 plt.title('sine plot', fontsize=18)
 plt.tick_params(labelsize=14)
 plt.colorbar()
+plt.savefig('sin.png')
 ~~~
 {: .language-python}
 
@@ -176,12 +178,14 @@ A colour scale is added using the function `plt.colorbar()`.
 > {: .language-python}
 > > ## Solution
 > > ~~~
+> > plt.figure(figsize=(10, 8))
 > > plt.scatter(x, cos_x, c=x, s=x*3, cmap='jet')
 > > plt.xlabel('x', fontsize=16)
 > > plt.ylabel('sin(x)', fontsize=16)
 > > plt.title('Cosine plot', fontsize=18)
 > > plt.tick_params(labelsize=14)
 > > plt.colorbar()
+> > plt.savefig('cos.png')
 > > ~~~
 > > {: .language-python}
 > > ![Cos Scatter Plot](../fig/9_cos_scatter.svg)
