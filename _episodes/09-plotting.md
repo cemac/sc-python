@@ -55,7 +55,7 @@ plt.ylabel('Position (km)')
 
 ## Plotting data from NumPy arrays
 
-Lets generate some data using NumPy:
+Let's generate some data using NumPy:
 
 ~~~
 x = np.arange(0, 10, 0.1)
