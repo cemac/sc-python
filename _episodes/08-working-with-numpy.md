@@ -9,15 +9,15 @@ objectives:
 - "Create a NumPy array."
 - "Apply functions to NumPy arrays."
 keypoints:
-- "NumPy provides many funtions for working with numerical data"
-- "The NumPy `ndarray` can be used to store numerical data with multiple dimensions"
-- "The NumPy functions enable efficient processing of values in a `ndarray`"
+- "NumPy provides many funtions for working with numerical data."
+- "The NumPy `ndarray` can be used to store numerical data with multiple dimensions."
+- "The NumPy functions enable efficient processing of values in a `ndarray`."
 ---
 ## Working with the NumPy library
 
 *   [NumPy](https://numpy.org/) is a widely-used Python library for numerical operations.
 *   NumPy uses the `ndarray` type for storing data.
-*   Load it with `import nump as np`. The alias `np` is commonly used for NumPy.
+*   Load it with `import numpy as np`. The alias `np` is commonly used for NumPy.
 
 ~~~
 import numpy as np
@@ -49,7 +49,7 @@ int64
 {: .output}
 
 * The `shape` attribute contains information about the dimensions of the array.
-* All values in the array must have the same `dtype` (data type)
+* All values in the array must have the same `dtype` (data type).
 
 ## Array functions
 
@@ -168,8 +168,8 @@ print(values[1, 2])
 > > ~~~
 > > {: .language-python}
 > > The first command returns the maximum value from the whole array.
-> > The second command returns the maximum value from each column (`axis=0`)
-> > The third command returns the maximum value from each row (`axis=1`)
+> > The second command returns the maximum value from each column (`axis=0`).
+> > The third command returns the maximum value from each row (`axis=1`).
 > {: .solution}
 {: .challenge}
 
