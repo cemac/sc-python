@@ -133,7 +133,7 @@ plt.savefig('sin.png')
 
 Each plotting function in Matplotlib has its own set of argmuents. The documentation for the `scatter()` function can be found [here](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html).
 
-The `plt.figure(figsize=(10, 8))` command is used to create a figure of the specified size. The default units for Matplotlib figures are inches. In this instance the figure size is set to 10 inches wide by 8 inches high, to avoid any of the axes labels being cut off.
+The `plt.figure(figsize=(10, 8))` command is used to create a figure of the specified size. The default units for Matplotlib figures are inches. In this instance the figure size is adjusted, to avoid any axes labels being cut off when saving the plot to a file, to 10 inches wide by 8 inches high.
 
 The `c=x` option sets the colour value of the scatter points based on the value of `x`. The `s=x*3` options sets the size of the scatter points based on the values of `x` multiplied by 3.
 
