@@ -256,7 +256,7 @@ There is some ice velocity data in the file `data/measures_iv.tif`. This is MEaS
 We can use the GDAL library to read this data in to a Numpy array:
 
 ~~~
-import gdal
+from osgeo import gdal
 
 # Open the GeoTIFF file:
 iv_raster = gdal.Open('data/measures_iv.tif')
