@@ -133,6 +133,8 @@ plt.savefig('sin.png')
 
 Each plotting function in Matplotlib has its own set of argmuents. The documentation for the `scatter()` function can be found [here](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html).
 
+The `plt.figure(figsize=(10, 8))` command is used to create a figure of the specified size. The default units for Matplotlib figures are inches. In this instance the figure size is set to 10 inches wide by 8 inches high, to avoid any of the axes labels being cut off.
+
 The `c=x` option sets the colour value of the scatter points based on the value of `x`. The `s=x*3` options sets the size of the scatter points based on the values of `x` multiplied by 3.
 
 A title is added to the plot using `plt.title()`. The font size is set using the `fontsize` argument for the title, x axis label and y axis label. To set the font size for the tick labels, the `plt._tick_params()` function is used, where the size is set using the `labelsize` option. 
