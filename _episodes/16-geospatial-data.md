@@ -247,7 +247,43 @@ There is now quite a lot going on to create the plot, and we can see how adding 
 * The label for the colour scale is set with `cbar.set_label()`.
 * Finally, we set the plot title using `map_axes.set_title()`
 
-You may wish to try changing the projection of the plot, plotting the data from a different time step or plotting the mean sea level pressure data.
+> ## Plotting a different time step
+>
+> How would you plot the data from the second time step in the NetCDF file, using the `Orthographic` projection?
+>
+> You will need to add the following argument to the `pcolormesh()` command, so that the data points are correctly projected:
+> ~~~
+> transform=cartopy.crs.PlateCarree()
+> ~~~
+> {: .language-python}
+> > ## Solution
+> > ~~~
+> > # Get the lat and lon values for the data:
+> > lons = temp.coord('longitude').points
+> > lats = temp.coord('latitude').points
+> > # Get the temperature data for the second time step:
+> > temp_data = temp.data[1]
+> > # Set map projection:
+> > map_projection = cartopy.crs.Orthographic()
+> > # Create the plot axes:
+> > map_axes = plt.axes(projection=map_projection)
+> > # Add coastlines to the map:
+> > map_axes.add_feature(cartopy.feature.COASTLINE)
+> > # Add gridlines to the map:
+> > map_axes.gridlines(draw_labels=True, linestyle='--', xlocs=np.arange(-180, 181, 90), ylocs=np.arange(-90, 91, 60))
+> > # Plot the temperature data:
+> > temp_plot = map_axes.pcolormesh(lons, lats, temp_data, shading='auto', edgecolors='face', cmap='coolwarm', transform=cartopy.crs.PlateCarree())
+> > # Add a colour scale:
+> > cbar = plt.colorbar(temp_plot, orientation='horizontal', fraction=0.05)
+> > # Set the colour bar label:
+> > cbar.set_label('temperature (K)')
+> > # Set the plot title:
+> > map_axes.set_title('2m Temperature')
+> > ~~~
+> > {: .language-python}
+> > ![Temperature Plot 3](../fig/16_temp_plot3.png)
+> {: .solution}
+{: .challenge}
 
 ## Reading GeoTIFF  data with GDAL
 
@@ -337,8 +373,8 @@ We will set any pixels with a value less than 0 to NaN:
 # Check the no data value:
 iv_nodata = iv_raster.GetRasterBand(1).GetNoDataValue()
 print('No data value: ', iv_nodata)
-# Set all values less than 0 to NaN:
-iv_data[iv_data < 0] = np.nan
+# Set no data values to NaN:
+iv_data[iv_data == iv_nodata] = np.nan
 ~~~
 {: .language-python}
 ~~~
@@ -387,4 +423,4 @@ map_axes.set_title('Ice Velocity')
 
 ![Ice Velocity Plot](../fig/16_iv_plot.png)
 
-What properties have we changed compared to the earlier temperature plot?
+What properties have we changed compared to the earlier temperature plots?
