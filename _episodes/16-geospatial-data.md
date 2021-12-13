@@ -247,7 +247,7 @@ There is now quite a lot going on to create the plot, and we can see how adding 
 * The label for the colour scale is set with `cbar.set_label()`.
 * Finally, we set the plot title using `map_axes.set_title()`
 
-> ## Plotting a different time step
+> ## Plotting data from a different time step
 >
 > How would you plot the data from the second time step in the NetCDF file, using the `Orthographic` projection?
 >
