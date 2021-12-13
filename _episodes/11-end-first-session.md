@@ -1,7 +1,7 @@
 ---
 layout: end_session
 title: "End Of First Session"
-teaching: -210
+teaching: 45
 exercises: 0
 ---
 Before the next session, install some additional Python libraries, using the `conda` command line tool:
