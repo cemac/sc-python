@@ -2,6 +2,30 @@
 title: "Setup"
 ---
 
+## Installing Anaconda / Miniconda
+
+Miniconda is a minimal version of the Anaconda software which includes enough components to create and manage different environments.
+
+For these sessions, we will create an environment containing all of the required components, and this can be done using either the full version of anaconda, or using Miniconda.
+
+Miniconda installers can be found [here](https://docs.conda.io/en/latest/miniconda.html)
+
+Notes for installing the full version of Anaconda can be found below.
+
+## Creating an environment
+
+From a terminal / Anaconda prompt window, an environment containing all of the components which are required for these sessions can be created with the command:
+
+~~~
+conda create -c conda-forge -n python_training jupyterlab numpy matplotlib pandas gdal cartopy iris
+~~~
+
+Once the environment has been created, it can be activated with:
+
+~~~
+conda activate python_training
+~~~
+
 ## Getting the Data
 
 We will be working with various data files throughout the session.
