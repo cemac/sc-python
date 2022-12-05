@@ -11,7 +11,7 @@ keypoints:
 - "Break programs down into functions to make them easier to understand."
 - "Define a function using `def` with a name, parameters, and a block of code."
 - "Defining a function does not run it."
-- "Arguments in call are matched to parameters in definition."
+- "Arguments in a function call are matched to its defined parameters."
 - "Functions may return a result to their caller using `return`."
 ---
 ## Break programs down into functions to make them easier to understand.
@@ -57,7 +57,7 @@ Hello!
 ~~~
 {: .output}
 
-## Arguments in call are matched to parameters in definition.
+## Arguments in a function call are matched to its defined parameters.
 
 *   Functions are most useful when they can operate on different data.
 *   Specify *parameters* when defining a function.
@@ -80,7 +80,9 @@ print_date(1871, 3, 19)
 {: .output}
 
 Or, we can name the arguments when we call the function, which allows us to
-specify them in any order:
+specify them in any order and adds clarity to the call site; otherwise as
+one is reading the code they might forget if the second argument is the month
+or the day for example.
 ~~~
 print_date(month=3, day=19, year=1871)
 ~~~

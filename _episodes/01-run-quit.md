@@ -3,7 +3,7 @@ title: "Running and Quitting"
 teaching: 20
 exercises: 0
 questions:
-- "How can I run Python code?"
+- "How can I run Python programs?"
 objectives:
 - "Launch the JupyterLab server." 
 - "Create a new Python script." 
@@ -58,7 +58,7 @@ does not require an internet connection.
 > ## JupyterLab? What about Jupyter notebooks?
 > 
 > JupyterLab is the [next stage in the evolution of the Jupyter Notebook](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview).
-> If you have prior experience working with Jupyter notebooks, then you will have a a good idea of what to expect from JupyterLab. 
+> If you have prior experience working with Jupyter notebooks, then you will have a good idea of what to expect from JupyterLab.
 > 
 > Experienced users of Jupyter notebooks interested in a more detailed discussion of the similarities and differences
 > between the JupyterLab and Jupyter notebook user interfaces can find more information in the 

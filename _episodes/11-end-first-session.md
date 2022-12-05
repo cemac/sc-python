@@ -4,7 +4,8 @@ title: "End Of First Session"
 teaching: 45
 exercises: 0
 ---
-Before the next session, install some additional Python libraries, using the `conda` command line tool:
+Before the next session, ensure all required Python libraries are installed, using the `conda`
+command line tool:
 
 ~~~
 conda install -c conda-forge gdal cartopy iris

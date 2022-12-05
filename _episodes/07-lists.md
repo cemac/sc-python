@@ -137,6 +137,7 @@ primes after removing last item: [2, 3, 5, 7]
 *   Use `[]` on its own to represent a list that doesn't contain any values.
     *   "The zero of lists."
 *   Helpful as a starting point for collecting values
+        (which we will see in [episode 12]({{ page.root }}/12-for-loops/)).
 
 ## Lists may contain values of different types.
 
@@ -235,14 +236,15 @@ IndexError: string index out of range
 
 > ## How Large is a Slice?
 >
-> If 'low' and 'high' are both non-negative integers,
-> how long is the list `values[low:high]`?
+> If `start` and `stop` are both non-negative integers,
+> how long is the list `values[start:stop]`?
 >
 > > ## Solution
-> > The list `values[low:high]` has `high - low` elements.  For example,
+> > The list `values[start:stop]` has up to `stop - start` elements.  For example,
 > > `values[1:4]` has the 3 elements `values[1]`, `values[2]`, and `values[3]`.
-> > Note that the expression will only work if `high` is less than the total
-> > length of the list `values`.
+> > Why 'up to'? As we saw in [episode 2]({{ page.root }}/02-variables/),
+> > if `stop` is greater than the total length of the list `values`,
+> > we will still get a list back but it will be shorter than expected.
 > {: .solution}
 {: .challenge}
 
