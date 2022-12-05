@@ -14,7 +14,7 @@ keypoints:
 ---
 ## Installing third party libraries with `conda`
 
-The `conda` command line tool is used to manage packages and environments within an anaconda installation.
+The `conda` command line tool is used to manage packages and environments within an Anaconda installation.
 
 From a terminal, or Anaconda prompt, the libraries we will be using can be installed with:
 

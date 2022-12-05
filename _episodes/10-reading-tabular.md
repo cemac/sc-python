@@ -29,28 +29,26 @@ keypoints:
     *   Argument is the name of the file to be read.
     *   Assign result to a variable to store the data that was read.
 
+We are going to read some temperature data, collected by the
+[NCAS weather station](https://www.wunderground.com/dashboard/pws/ILEEDS34)
+in Leeds.
+
 ~~~
 import pandas as pd
 
-data = pd.read_csv('data/temp_rh_2021-11-26.csv')
+data = pd.read_csv('data/temperature_2022-07.csv')
 print(data)
 ~~~
 {: .language-python}
 ~~~
-                     Date  Temperature  Relative Humidity
-0     2021-11-26 00:00:08         15.4               59.5
-1     2021-11-26 00:00:18         15.4               59.4
-2     2021-11-26 00:00:28         15.4               59.4
-3     2021-11-26 00:00:38         15.4               59.5
-4     2021-11-26 00:00:48         15.4               59.5
-...                   ...          ...                ...
-8617  2021-11-26 23:59:14         14.2               57.4
-8618  2021-11-26 23:59:24         14.1               57.4
-8619  2021-11-26 23:59:34         14.1               57.4
-8620  2021-11-26 23:59:44         14.1               57.4
-8621  2021-11-26 23:59:54         14.2               57.4
-
-[8621 rows x 3 columns]
+         Date  Max Temperature  Average Temperature  Min Temperature
+0   2022-07-01             19.3                 15.2             12.6
+1   2022-07-02             20.3                 16.3             13.3
+2   2022-07-03             20.4                 15.7             11.7
+...
+28  2022-07-29             22.7                 17.6             14.2
+29  2022-07-30             20.7                 18.2             16.2
+30  2022-07-31             22.7                 18.6             15.8
 ~~~
 {: .output}
 
@@ -60,14 +58,14 @@ print(data)
 > ## File Not Found
 >
 > Our lessons store their data files in a `data` sub-directory,
-> which is why the path to the file is `data/temp_rh_2021-11-26.csv`.
+> which is why the path to the file is `data/temperature_2022-07.csv`.
 > If you forget to include `data/`,
 > or if you include it but your copy of the file is somewhere else,
 > you will get a [runtime error]({{ page.root }}/04-built-in/#runtime-error)
 > that ends with a line like this:
 >
 > ~~~
-> FileNotFoundError: [Errno 2] No such file or directory: 'data/temp_rh_2021-11-26.csv`
+> FileNotFoundError: [Errno 2] No such file or directory: 'data/temperature_2022-07.csv`
 > ~~~
 > {: .error}
 {: .callout}
@@ -79,26 +77,20 @@ print(data)
 *   Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
 
 ~~~
-data = pd.read_csv('data/temp_rh_2021-11-26.csv', index_col='Date')
+data = pd.read_csv('data/temperature_2022-07.csv', index_col='Date')
 print(data)
 ~~~
 {: .language-python}
 ~~~
-                     Temperature  Relative Humidity
-Date                                               
-2021-11-26 00:00:08         15.4               59.5
-2021-11-26 00:00:18         15.4               59.4
-2021-11-26 00:00:28         15.4               59.4
-2021-11-26 00:00:38         15.4               59.5
-2021-11-26 00:00:48         15.4               59.5
-...                          ...                ...
-2021-11-26 23:59:14         14.2               57.4
-2021-11-26 23:59:24         14.1               57.4
-2021-11-26 23:59:34         14.1               57.4
-2021-11-26 23:59:44         14.1               57.4
-2021-11-26 23:59:54         14.2               57.4
-
-[8621 rows x 2 columns]
+            Max Temperature  Average Temperature  Min Temperature
+Date                                                             
+2022-07-01             19.3                 15.2             12.6
+2022-07-02             20.3                 16.3             13.3
+2022-07-03             20.4                 15.7             11.7
+...
+2022-07-29             22.7                 17.6             14.2
+2022-07-30             20.7                 18.2             16.2
+2022-07-31             22.7                 18.6             15.8
 ~~~
 {: .output}
 
@@ -110,21 +102,22 @@ data.info()
 {: .language-python}
 ~~~
 <class 'pandas.core.frame.DataFrame'>
-Index: 8621 entries, 2021-11-26 00:00:08 to 2021-11-26 23:59:54
-Data columns (total 2 columns):
- #   Column             Non-Null Count  Dtype  
----  ------             --------------  -----  
- 0   Temperature        8621 non-null   float64
- 1   Relative Humidity  8621 non-null   float64
-dtypes: float64(2)
-memory usage: 460.1+ KB
+Index: 31 entries, 2022-07-01 to 2022-07-31
+Data columns (total 3 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   Max Temperature      31 non-null     float64
+ 1   Average Temperature  31 non-null     float64
+ 2   Min Temperature      31 non-null     float64
+dtypes: float64(3)
+memory usage: 992.0+ bytes
 ~~~
 {: .output}
 
 *   This is a `DataFrame`
-*   8,622 rows
-*   Two columns, 'Temperature' and 'Relative Humidity'
-*   Uses 460KB of memory.
+*   31 rows
+*   Three columns, 'Max Temperature', 'Average Temperature, and 'Min Temperature'
+*   Uses 992 bytes of memory.
 
 ## The `DataFrame.columns` variable stores information about the DataFrame's columns.
 
@@ -138,7 +131,7 @@ print(data.columns)
 ~~~
 {: .language-python}
 ~~~
-Index(['Temperature', 'Relative Humidity'], dtype='object')
+Index(['Max Temperature', 'Average Temperature', 'Min Temperature'], dtype='object')
 ~~~
 {: .output}
 
@@ -153,47 +146,32 @@ print(data.T)
 ~~~
 {: .language-python}
 ~~~
-Date               2021-11-26 00:00:08  2021-11-26 00:00:18  \
-Temperature                       15.4                 15.4   
-Relative Humidity                 59.5                 59.4   
+Date                 2022-07-01  2022-07-02  2022-07-03  2022-07-04  \
+Max Temperature            19.3        20.3        20.4        18.2   
+Average Temperature        15.2        16.3        15.7        15.3   
+Min Temperature            12.6        13.3        11.7        13.5   
 
-Date               2021-11-26 00:00:28  2021-11-26 00:00:38  \
-Temperature                       15.4                 15.4   
-Relative Humidity                 59.4                 59.5   
+Date                 2022-07-05  2022-07-06  2022-07-07  2022-07-08  \
+Max Temperature            20.7        19.9        24.5        23.7   
+Average Temperature        16.2        16.8        18.3        18.8   
+Min Temperature            12.2        14.6        14.1        14.3   
 
-Date               2021-11-26 00:00:48  2021-11-26 00:00:58  \
-Temperature                       15.4                 15.4   
-Relative Humidity                 59.5                 59.5   
+Date                 2022-07-09  2022-07-10  ...  2022-07-22  2022-07-23  \
+Max Temperature            24.5        28.3  ...        17.1        21.3   
+Average Temperature        19.1        21.0  ...        15.7        18.2   
+Min Temperature            14.8        13.6  ...        14.6        13.6   
 
-Date               2021-11-26 00:01:08  2021-11-26 00:01:18  \
-Temperature                       15.4                 15.4   
-Relative Humidity                 59.4                 59.4   
+Date                 2022-07-24  2022-07-25  2022-07-26  2022-07-27  \
+Max Temperature            23.9        22.5        19.7        23.2   
+Average Temperature        19.9        17.4        14.9        17.4   
+Min Temperature            17.8        13.3        12.6        12.1   
 
-Date               2021-11-26 00:01:28  2021-11-26 00:01:38  ...  \
-Temperature                       15.4                 15.4  ...   
-Relative Humidity                 59.5                 59.5  ...   
+Date                 2022-07-28  2022-07-29  2022-07-30  2022-07-31  
+Max Temperature            20.7        22.7        20.7        22.7  
+Average Temperature        16.6        17.6        18.2        18.6  
+Min Temperature            13.5        14.2        16.2        15.8  
 
-Date               2021-11-26 23:58:24  2021-11-26 23:58:34  \
-Temperature                       14.1                 14.2   
-Relative Humidity                 57.3                 57.4   
-
-Date               2021-11-26 23:58:44  2021-11-26 23:58:54  \
-Temperature                       14.1                 14.1   
-Relative Humidity                 57.4                 57.3   
-
-Date               2021-11-26 23:59:04  2021-11-26 23:59:14  \
-Temperature                       14.1                 14.2   
-Relative Humidity                 57.4                 57.4   
-
-Date               2021-11-26 23:59:24  2021-11-26 23:59:34  \
-Temperature                       14.1                 14.1   
-Relative Humidity                 57.4                 57.4   
-
-Date               2021-11-26 23:59:44  2021-11-26 23:59:54  
-Temperature                       14.1                 14.2  
-Relative Humidity                 57.4                 57.4  
-
-[2 rows x 8621 columns]
+[3 rows x 31 columns]
 ~~~
 {: .output}
 
@@ -206,41 +184,61 @@ print(data.describe())
 ~~~
 {: .language-python}
 ~~~
-       Temperature  Relative Humidity
-count  8621.000000        8621.000000
-mean     15.823396          57.953254
-std       0.838591           2.017624
-min      14.100000          53.800000
-25%      15.100000          56.400000
-50%      15.800000          58.800000
-75%      16.500000          59.700000
-max      17.500000          60.500000
+       Max Temperature  Average Temperature  Min Temperature
+count        31.000000            31.000000        31.000000
+mean         23.567742            18.816129        14.745161
+std           5.056441             3.553880         2.533093
+min          17.100000            14.900000        11.600000
+25%          20.350000            16.500000        13.350000
+50%          22.500000            18.200000        14.200000
+75%          24.700000            19.500000        15.600000
+max          39.300000            29.100000        21.700000
 ~~~
 {: .output}
 
 ## Accessing values by column
 
-To access the values in a particular column, the column name can be accessed from the DataFrame in a similar way to accessing values in a list by index. To access the `Relative Humidity` values:
+To access the values in a particular column, the column name can be accessed from the DataFrame in a similar way to accessing values in a list by index. To access the `Average Temperature` values:
 
 ~~~
-print(data['Relative Humidity'])
+print(data['Average Temperature'])
 ~~~
 {: .language-python}
 
 ~~~
 Date
-2021-11-26 00:00:08    59.5
-2021-11-26 00:00:18    59.4
-2021-11-26 00:00:28    59.4
-2021-11-26 00:00:38    59.5
-2021-11-26 00:00:48    59.5
-                       ... 
-2021-11-26 23:59:14    57.4
-2021-11-26 23:59:24    57.4
-2021-11-26 23:59:34    57.4
-2021-11-26 23:59:44    57.4
-2021-11-26 23:59:54    57.4
-Name: Relative Humidity, Length: 8621, dtype: float64
+2022-07-01    15.2
+2022-07-02    16.3
+2022-07-03    15.7
+2022-07-04    15.3
+2022-07-05    16.2
+2022-07-06    16.8
+2022-07-07    18.3
+2022-07-08    18.8
+2022-07-09    19.1
+2022-07-10    21.0
+2022-07-11    23.6
+2022-07-12    22.6
+2022-07-13    18.3
+2022-07-14    16.5
+2022-07-15    16.5
+2022-07-16    18.6
+2022-07-17    23.4
+2022-07-18    28.7
+2022-07-19    29.1
+2022-07-20    21.7
+2022-07-21    17.1
+2022-07-22    15.7
+2022-07-23    18.2
+2022-07-24    19.9
+2022-07-25    17.4
+2022-07-26    14.9
+2022-07-27    17.4
+2022-07-28    16.6
+2022-07-29    17.6
+2022-07-30    18.2
+2022-07-31    18.6
+Name: Average Temperature, dtype: float64
 ~~~
 {: .output}
 
@@ -252,16 +250,14 @@ print(data.index)
 {: .language-python}
 
 ~~~
-Index(['2021-11-26 00:00:08', '2021-11-26 00:00:18', '2021-11-26 00:00:28',
-       '2021-11-26 00:00:38', '2021-11-26 00:00:48', '2021-11-26 00:00:58',
-       '2021-11-26 00:01:08', '2021-11-26 00:01:18', '2021-11-26 00:01:28',
-       '2021-11-26 00:01:38',
-       ...
-       '2021-11-26 23:58:24', '2021-11-26 23:58:34', '2021-11-26 23:58:44',
-       '2021-11-26 23:58:54', '2021-11-26 23:59:04', '2021-11-26 23:59:14',
-       '2021-11-26 23:59:24', '2021-11-26 23:59:34', '2021-11-26 23:59:44',
-       '2021-11-26 23:59:54'],
-      dtype='object', name='Date', length=8621)
+Index(['2022-07-01', '2022-07-02', '2022-07-03', '2022-07-04', '2022-07-05',
+       '2022-07-06', '2022-07-07', '2022-07-08', '2022-07-09', '2022-07-10',
+       '2022-07-11', '2022-07-12', '2022-07-13', '2022-07-14', '2022-07-15',
+       '2022-07-16', '2022-07-17', '2022-07-18', '2022-07-19', '2022-07-20',
+       '2022-07-21', '2022-07-22', '2022-07-23', '2022-07-24', '2022-07-25',
+       '2022-07-26', '2022-07-27', '2022-07-28', '2022-07-29', '2022-07-30',
+       '2022-07-31'],
+      dtype='object', name='Date')
 ~~~
 {: .output}
 
@@ -270,7 +266,7 @@ Index(['2021-11-26 00:00:08', '2021-11-26 00:00:18', '2021-11-26 00:00:28',
 First, we will re-read the CSV file, telling Pandas to parse the 'Date' values to convert them in to Pandas `Timestamp` objects:
 
 ~~~
-data = pd.read_csv('data/temp_rh_2021-11-26.csv', index_col='Date', parse_dates=['Date'])
+data = pd.read_csv('data/temperature_2022-07.csv', index_col='Date', parse_dates=['Date'])
 data.head()
 ~~~
 {: .language-python}
@@ -284,19 +280,19 @@ data.plot()
 ~~~
 {: .language-python}
  
-![Temperature and Relative Humidity Plot 1](../fig/10_temp_rh_plot1.svg)
+![Temperature Plot 1](../fig/10_temperature_plot1.svg)
 
 A specific column can be plotted, by using the `y`  argument:
 
 ~~~
 plt.style.use('ggplot')
-data.plot(y='Relative Humidity')
-plt.ylabel('relative humidity (%)')
+data.plot(y='Average Temperature')
+plt.ylabel('temperature (°C)')
 plt.xlabel('date')
 ~~~
 {: .language-python}
 
-![Temperature and Relative Humidity Plot 2](../fig/10_temp_rh_plot2.svg)
+![Temperature Plot 2](../fig/10_temperature_plot2.svg)
 
 Note how we have changes the style of the plot using `plt.style.use('ggplot')`.
 
@@ -304,17 +300,17 @@ Running `plt.style.use('default')` will switch back to using the default style.
 
 > ## Reading Other Data
 >
-> Read the data in `temp_rh_2021-11-27.csv`
-> (which should be in the same directory as `temp_rh_2021-11-26.csv`)
+> Read the data in `temperature_2022-08.csv`
+> (which should be in the same directory as `temperature_2022-07.csv`)
 > into a variable called `more_data`,
 > display its summary statistics, and plot the values.
 >
 > > ## Solution
-> > To read in a CSV, we use `pd.read_csv` and pass the filename `'data/temp_rh_2021-11-27.csv'` to it.
+> > To read in a CSV, we use `pd.read_csv` and pass the filename `'data/temperature_2022-08.csv'` to it.
 > > The summary statistics can be displayed with the `DataFrame.describe()` method.
 > > `more_data.plot()` will plot the values.
 > > ~~~
-> > more_data = pd.read_csv('data/temp_rh_2021-11-27.csv', index_col='Date', parse_dates=['Date'])
+> > more_data = pd.read_csv('data/temperature_2022-08.csv', index_col='Date', parse_dates=['Date'])
 > > print(more_data.describe())
 > > more_data.plot()
 > > ~~~
