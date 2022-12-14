@@ -170,7 +170,7 @@ plt.colorbar()
 ~~~
 {: .language-python}
 
-![Temperature Plot 1](../fig/16_temp_plot1.png)
+![Temperature Plot 1](../fig/17_temp_plot1.png)
 
 ## Using Cartopy to plot data on a map
 
@@ -197,7 +197,7 @@ There are several other basic features which can be added to a map using Cartopy
 * OCEAN
 * RIVERS
 
-![Cartopy Plot 1](../fig/16_cartopy_plot1.png)
+![Cartopy Plot 1](../fig/17_cartopy_plot1.png)
 
 We can also add gridlines to the map with `map_ax.gridlines()`:
 
@@ -210,7 +210,7 @@ map_axes.gridlines(draw_labels=True, xlocs=np.arange(-180, 181, 90), ylocs=np.ar
 ~~~
 {: .language-python}
 
-![Cartopy Plot 2](../fig/16_cartopy_plot2.png)
+![Cartopy Plot 2](../fig/17_cartopy_plot2.png)
 
 Next we will add our temperature data to the map. When working with Matplotlib axes as we are here, the plotting functions become a method of the axes, so rather than `plt.pcolormesh()`, we will use `map_axes.pcolormesh()`:
 
@@ -219,12 +219,12 @@ Next we will add our temperature data to the map. When working with Matplotlib a
 map_projection = cartopy.crs.PlateCarree()
 # Create the plot axes:
 map_axes = plt.axes(projection=map_projection)
-# Add coastlines to the map:
-map_axes.add_feature(cartopy.feature.COASTLINE)
 # Add gridlines to the map:
 map_axes.gridlines(draw_labels=True, linestyle='--', xlocs=np.arange(-180, 181, 90), ylocs=np.arange(-90, 91, 60))
 # Plot the temperature data:
 temp_plot = map_axes.pcolormesh(lons, lats, temp_data, shading='auto', edgecolors='face', cmap='coolwarm')
+# Add coastlines to the map:
+map_axes.add_feature(cartopy.feature.COASTLINE)
 # Add a colour scale:
 cbar = plt.colorbar(temp_plot, orientation='horizontal', fraction=0.05)
 # Set the colour bar label:
@@ -234,7 +234,7 @@ map_axes.set_title('2m Temperature')
 ~~~
 {: .language-python}
 
-![Temperature Plot 2](../fig/16_temp_plot2.png)
+![Temperature Plot 2](../fig/17_temp_plot2.png)
 
 There is now quite a lot going on to create the plot, and we can see how adding comments helps to keep track of what is being done.
 
@@ -267,12 +267,12 @@ There is now quite a lot going on to create the plot, and we can see how adding 
 > > map_projection = cartopy.crs.Orthographic()
 > > # Create the plot axes:
 > > map_axes = plt.axes(projection=map_projection)
-> > # Add coastlines to the map:
-> > map_axes.add_feature(cartopy.feature.COASTLINE)
 > > # Add gridlines to the map:
 > > map_axes.gridlines(draw_labels=True, linestyle='--', xlocs=np.arange(-180, 181, 90), ylocs=np.arange(-90, 91, 60))
 > > # Plot the temperature data:
 > > temp_plot = map_axes.pcolormesh(lons, lats, temp_data, shading='auto', edgecolors='face', cmap='coolwarm', transform=cartopy.crs.PlateCarree())
+> > # Add coastlines to the map:
+> > map_axes.add_feature(cartopy.feature.COASTLINE)
 > > # Add a colour scale:
 > > cbar = plt.colorbar(temp_plot, orientation='horizontal', fraction=0.05)
 > > # Set the colour bar label:
@@ -281,7 +281,7 @@ There is now quite a lot going on to create the plot, and we can see how adding 
 > > map_axes.set_title('2m Temperature')
 > > ~~~
 > > {: .language-python}
-> > ![Temperature Plot 3](../fig/16_temp_plot3.png)
+> > ![Temperature Plot 3](../fig/17_temp_plot3.png)
 > {: .solution}
 {: .challenge}
 
@@ -404,14 +404,14 @@ Lets see if we can plot the ice velocity data on a map. This time, we will use t
 map_projection = cartopy.crs.SouthPolarStereo()
 # Create the plot axes:
 map_axes = plt.axes(projection=map_projection)
-# Add coastlines to the map:
-map_axes.add_feature(cartopy.feature.COASTLINE)
 # Add gridlines to the map:
 map_axes.gridlines(draw_labels=True, linestyle='--',
                    xlocs=np.arange(-180, 181, 60),
                    ylocs=np.arange(-80, -51, 10))
 # Plot the ice velovity data:
 temp_plot = map_axes.pcolormesh(iv_x, iv_y, iv_data, cmap='hot_r', vmin=0, vmax=1000)
+# Add coastlines to the map:
+map_axes.add_feature(cartopy.feature.COASTLINE)
 # Add a colour scale:
 cbar = plt.colorbar(temp_plot, pad=0.1)
 # Set the colour bar label:
@@ -421,6 +421,6 @@ map_axes.set_title('Ice Velocity')
 ~~~
 {: .language-python}
 
-![Ice Velocity Plot](../fig/16_iv_plot.png)
+![Ice Velocity Plot](../fig/17_iv_plot.png)
 
 What properties have we changed compared to the earlier temperature plots?

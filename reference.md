@@ -164,7 +164,7 @@ for filename in glob.glob(*.txt):
 ~~~
 {: .language-python}
 
-## [Writing Functions]({{ page.root }}/16-writing-functions/)
+## [Writing Functions]({{ page.root }}/14-writing-functions/)
 - Define a function using `def function_name(parameters):`. Replace `parameters` with the variables to use when the function is executed.
 - Run by using `function_name(parameters)`.
 - To return a result to the caller use `return ...` in the function.
@@ -178,7 +178,7 @@ add_numbers(1, 4)
 ~~~
 {: .language-python}
 
-## [Variable Scope]({{ page.root }}/17-scope/)
+## [Variable Scope]({{ page.root }}/16-scope/)
 - A local variable is defined in a function and can only be seen and used within that function.
 - A global variable is defined outside of a function and can be seen or used anywhere after definition.
 
