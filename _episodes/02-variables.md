@@ -212,6 +212,7 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > initial = 'left'
 > position = initial
 > initial = 'right'
+> print(position)
 > ~~~
 > {: .language-python}
 > > ## Solution
