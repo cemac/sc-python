@@ -83,13 +83,15 @@ result of print is None
     *   "Larger" and "smaller" use (0-9, A-Z, a-z) to compare letters.
 
 ~~~
-print(max(1, 2, 3))
-print(min('a', 'A', '0'))
+max_value = max(1, 2, 3)
+print('maximum value is:', max_value)
+min_value = min('a', 'A', '0')
+print('minimum value is:', min_value)
 ~~~
 {: .language-python}
 ~~~
-3
-0
+maximum value is: 3
+minimum value is: 0
 ~~~
 {: .output}
 
