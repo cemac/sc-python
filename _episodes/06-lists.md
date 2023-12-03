@@ -332,28 +332,6 @@ IndexError: string index out of range
 > {: .solution}
 {: .challenge}
 
-> ## Slice Bounds
->
-> What does the following program print?
->
-> ~~~
-> element = 'lithium'
-> print(element[0:20])
-> print(element[-1:3])
-> ~~~
-> {: .language-python}
->
-> > ## Solution
-> > ~~~
-> > lithium
-> > 
-> > ~~~
-> > {: .output}
-> The first statement prints the whole string, since the slice goes beyond the total length of the string.
-> The second statement returns an empty string, because the slice goes "out of bounds" of the string.
-> {: .solution}
-{: .challenge}
-
 > ## Sort and Sorted
 >
 > What do these two programs print?
