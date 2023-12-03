@@ -257,30 +257,6 @@ first is 2 and second is 5
 > {: .solution}
 {: .challenge}
 
-> ## Choose a Type
->
-> What type of value (integer, floating point number, or character string)
-> would you use to represent each of the following?  Try to come up with more than one good answer for each problem.  For example, in  # 1, when would counting days with a floating point variable make more sense than using an integer?  
->
-> 1. Number of days since the start of the year.
-> 2. Time elapsed from the start of the year until now in days.
-> 3. Serial number of a piece of lab equipment.
-> 4. A lab specimen's age
-> 5. Current population of a city.
-> 6. Average population of a city over time.
->
-> > ## Solution
-> >
-> > The answers to the questions are:
-> > 1. Integer, since the number of days would lie between 1 and 365. 
-> > 2. Floating point, since fractional days are required
-> > 3. Character string if serial number contains letters and numbers, otherwise integer if the serial number consists only of numerals
-> > 4. This will vary! How do you define a specimen's age? whole days since collection (integer)? date and time (string)?
-> > 5. Choose floating point to represent population as large aggregates (eg millions), or integer to represent population in units of individuals.
-> > 6. Floating point number, since an average is likely to have a fractional part.
-> {: .solution}
-{: .challenge}
-
 > ## Division Types
 >
 > In Python 3, the `//` operator performs integer (whole-number) floor division, the `/` operator performs floating-point
