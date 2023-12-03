@@ -49,7 +49,17 @@ layout: reference
   - `help()` displays documentation for the function in the parenthesis.
     - Other ways to get help include holding down `shift` and pressing `tab` in Jupyter Notebooks.
 
-## [Libraries]({{ page.root }}/06-libraries/)
+## [Lists]({{ page.root }}/06-lists/)
+- Defined within `[...]` and separated by `,`.
+  - An empty list can be created by using `[]`.
+- Can use `len(...)` to determine how many values are in a list.
+- Can index just as done in previous lessons.
+  - Indexing can be used to reassign values `list_name[0] = newvalue`.
+- To add an item to a list use `list_name.append()`, with the item to append in the parenthesis.
+- To combine two lists use `list_name_1.extend(list_name_2)`.
+- To remove an item from a list use `del list_name[index]`.
+
+## [Libraries]({{ page.root }}/07-libraries/)
 - Importing a library:
   - Use `import ...` to load a library.
   - Refer to this library by using `module_name.thing_name`.
@@ -59,28 +69,6 @@ layout: reference
 - Importing the math library: `import math`
   - Example of referring to an item with the module's name: `math.cos(math.pi)`.
 - Importing the plotting library as an alias: `import matplotlib as mpl`
-
-## [Reading Tabular Data into DataFrames]({{ page.root }}/07-reading-tabular/)
-- Use the pandas library to do statistics on tabular data. Load with `import pandas as pd`.
-  - To read in a csv: `pd.read_csv()`, including the path name in the parenthesis.
-    - To specify a column's values should be used as row headings: `pd.read_csv('path', index_col='column name')`, where path and column name should be replaced with the relevant values.
-- To get more information about a DataFrame, use `DataFrame.info`, replacing `DataFrame` with the variable name of your DataFrame.
-- Use `DataFrame.columns` to view the column names.
-- Use `DataFrame.T` to transpose a DataFrame.
-- Use `DataFrame.describe` to get summary statistics about your data.
-
-## [Pandas DataFrames]({{ page.root }}/08-data-frames/)
-- Select data using `[i,j]`
-  - To select by entry position: `DataFrame.iloc[..., ...]`
-    - This is inclusive of everything except the final index.
-  - To select by entry label: `DataFrame.loc[..., ...]`
-    - Can select multiple rows or columns by listing labels.
-    - This is inclusive to both ends.
-  - Use `:` to select all rows or columns.
-- Can also select data based on values using `True` and `False`. This is a Boolean mask.
-  - `mask = subset > 10000`
-  - We can then use this to select values.
-- To use a select-apply-combine operation we use `data.apply(lambda x: x > x.mean())` where `mean()` can be any operation the user would like to be applied to x.
 
 ## [Plotting]({{ page.root }}/09-plotting/)
 - The most widely used plotting library is `matplotlib`.
@@ -101,15 +89,14 @@ plt.legend()
 ~~~
 {: .language-python}
 
-## [Lists]({{ page.root }}/11-lists/)
-- Defined within `[...]` and separated by `,`.
-  - An empty list can be created by using `[]`.
-- Can use `len(...)` to determine how many values are in a list.
-- Can index just as done in previous lessons.
-  - Indexing can be used to reassign values `list_name[0] = newvalue`.
-- To add an item to a list use `list_name.append()`, with the item to append in the parenthesis.
-- To combine two lists use `list_name_1.extend(list_name_2)`.
-- To remove an item from a list use `del list_name[index]`.
+## [Reading Tabular Data with Pandas]({{ page.root }}/10-reading-tabular/)
+- Use the pandas library to do statistics on tabular data. Load with `import pandas as pd`.
+  - To read in a csv: `pd.read_csv()`, including the path name in the parenthesis.
+    - To specify a column's values should be used as row headings: `pd.read_csv('path', index_col='column name')`, where path and column name should be replaced with the relevant values.
+- To get more information about a DataFrame, use `DataFrame.info`, replacing `DataFrame` with the variable name of your DataFrame.
+- Use `DataFrame.columns` to view the column names.
+- Use `DataFrame.T` to transpose a DataFrame.
+- Use `DataFrame.describe` to get summary statistics about your data.
 
 ## [For Loops]({{ page.root }}/12-for-loops/)
 - Start a for loop with `for number in [1, 2, 3]:`, with the following lines indented.
@@ -146,21 +133,6 @@ for m in [3, 6, 7, 2, 8]:
         print(m, 'is 5')
     else:
         print(m, 'is small')
-~~~
-{: .language-python}
-
-## [Looping Over Data Sets]({{ page.root }}/14-looping-data-sets/)
-- Use a for loop: `for filename in [file1, file2]:`
-- To find a set of files using a pattern use `glob.glob`
-  - Must import first using `import glob`.
-  - `*` indicates "match zero or more characters"
-  - `?` indicates "match exactly one character"
-    - For example: `glob.glob(*.txt)` will find all files that end with `.txt` in the current directory.
-- Combine these by writing a loop using: `for filename in glob.glob(*.txt):`
-
-~~~
-for filename in glob.glob(*.txt):
-  data = pd.read_csv(filename)
 ~~~
 {: .language-python}
 

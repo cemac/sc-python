@@ -198,8 +198,7 @@ cos(pi) is -1.0
 > > ~~~
 > > {: .language-python}
 > >
-> > Note that this function returns a list of values. We will learn about
-> > lists in [episode 7]({{ page.root }}/07-lists/).
+> > Note that this function returns a list of values.
 > > 
 > > The simplest and shortest solution is the [`random.choice`](https://docs.python.org/3/library/random.html#random.choice) 
 > > function that does exactly what we want:
