@@ -151,6 +151,31 @@ print(values[1, 2])
 ~~~
 {: .output}
 
+> ## Finding the median value
+>
+> If we can find the mean value of the values array with:
+> ~~~
+> print(values.mean())
+> ~~~
+> {: .language-python}
+> Can we find the median value in a similar way? If not, is there another
+> way to find the median value?
+> > ## Solution
+> > ~~~
+> > print(np.median(values)) 
+> > ~~~
+> > {: .language-python}
+> > ~~~
+> > 4.0
+> > ~~~
+> > {: .output}
+> > The ndarray type does not have a median method, so values.median() does
+> > not work.
+> > However, the numpy library does include the median function, which can be
+> > applied to an array.
+> {: .solution}
+{: .challenge}
+
 > ## Applying functions along an axis
 >
 > What is the difference between these commands and the results they return?
@@ -166,7 +191,7 @@ print(values[1, 2])
 > > [4 7 5]
 > > [7 5]
 > > ~~~
-> > {: .language-python}
+> > {: .output}
 > > The first command returns the maximum value from the whole array.
 > > The second command returns the maximum value from each column (`axis=0`).
 > > The third command returns the maximum value from each row (`axis=1`).
