@@ -17,7 +17,7 @@ Notes for installing the full version of Anaconda can be found below.
 From a terminal / Anaconda prompt window, an environment containing all of the components which are required for these sessions can be created with the command:
 
 ~~~
-conda create -c conda-forge -n python_training python=3.9 jupyterlab numpy matplotlib pandas gdal cartopy iris
+conda create -c conda-forge -n python_training jupyterlab numpy matplotlib pandas cartopy iris gdal
 ~~~
 
 Once the environment has been created, it can be activated with:
