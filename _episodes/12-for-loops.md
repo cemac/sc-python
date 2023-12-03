@@ -186,31 +186,6 @@ print(total)
 > {: .solution}
 {: .challenge}
 
-> ## Reversing a String
->
-> Fill in the blanks in the program below so that it prints "nit"
-> (the reverse of the original character string "tin").
->
-> ~~~
-> original = "tin"
-> result = ____
-> for char in original:
->     result = ____
-> print(result)
-> ~~~
-> {: .language-python}
-> > ## Solution
-> > ~~~
-> > original = "tin"
-> > result = ""
-> > for char in original:
-> >     result = char + result
-> > print(result)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
-
 > ## Practice Accumulating
 >
 > Fill in the blanks in each of the programs below
@@ -268,20 +243,6 @@ print(total)
 > > for word in words:
 > >     result = result + word
 > > print(result)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
->
-> __Create an acronym:__ Starting from the list `["red", "green", "blue"]`, create the acronym `"RGB"` using
-> a for loop.
-> 
-> __Hint:__ You may need to use a string method to properly format the acronym.
-> > ## Solution
-> > ~~~
-> > acronym = ""
-> > for word in ["red", "green", "blue"]:
-> >     acronym = acronym + word[0].upper()
-> > print(acronym)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
