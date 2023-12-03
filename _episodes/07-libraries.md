@@ -213,37 +213,6 @@ cos(pi) is -1.0
 > {: .solution}
 {: .challenge}
 
-> ## Jigsaw Puzzle (Parson's Problem) Programming Example
->
-> Rearrange the following statements so that a random
-> DNA base is printed and its index in the string. 
-> Not all statements may be needed.  Feel free to use/add
-> intermediate variables.
->
-> ~~~
-> bases="ACTTGCTTGAC"
-> import math
-> import random
-> ___ = random.randrange(n_bases)
-> ___ = len(bases)
-> print("random base ", bases[___], "base index", ___)
-> ~~~
-> {: .language-python}
->
-> > ## Solution
-> >
-> > ~~~
-> > import math 
-> > import random
-> > bases = "ACTTGCTTGAC" 
-> > n_bases = len(bases)
-> > idx = random.randrange(n_bases)
-> > print("random base", bases[idx], "base index", idx)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
-
 > ## When Is Help Available?
 >
 > When a colleague of yours types `help(math)`,
