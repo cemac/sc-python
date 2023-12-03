@@ -1,6 +1,6 @@
 ---
 title: "Working With Geospatial data"
-teaching: 45
+teaching: 15
 exercises: 15
 questions:
 - "How can I read in and plot geospatial data?"
