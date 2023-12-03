@@ -114,11 +114,11 @@ def average(values):
 
 ~~~
 a = average([1, 3, 4])
-print('average of actual values:', a)
+print('average of values:', a)
 ~~~
 {: .language-python}
 ~~~
-average of actual values: 2.6666666666666665
+average of values: 2.6666666666666665
 ~~~
 {: .output}
 
@@ -367,7 +367,7 @@ average(values)
 > > 
 > > 1. `2003/2/1`
 > > 2. We saw examples of using *named arguments* when working with the pandas library. For example, when reading in a dataset 
-> > using `data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')`, the last argument `index_col` is a 
+> > using `data = pd.read_csv('data/temperature_2022-07.csv', index_col='Date')` the last argument `index_col` is a 
 > > named argument.  
 > > 3. Using named arguments can make code more readable since one can see from the function call what name the different arguments 
 > > have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments 
