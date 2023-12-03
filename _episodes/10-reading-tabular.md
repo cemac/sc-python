@@ -298,6 +298,26 @@ Note how we have changes the style of the plot using `plt.style.use('ggplot')`.
 
 Running `plt.style.use('default')` will switch back to using the default style.
 
+More information about Matplotlib styles can be found [here](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html).
+
+> ## Plot types
+>
+> The DataFrame `plot()` method can produce different kinds of plots, which
+> can be specified using the `kind=` argument.
+>
+> The [Pandas documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html)
+> describes the available options.
+>
+> How could you create a box plot of the `data` values?
+> > ## Solution
+> > ~~~
+> > data.plot(kind='box')
+> > ~~~
+> >{: .language-python}
+> >  ![Temperature Box Plot](../fig/10_temperature_box_plot.png)
+> {: .solution}
+{: .challenge}
+
 > ## Reading Other Data
 >
 > Read the data in `temperature_2022-08.csv`
