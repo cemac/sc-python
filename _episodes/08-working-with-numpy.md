@@ -169,7 +169,7 @@ print(values[1, 2])
 > > 4.0
 > > ~~~
 > > {: .output}
-> > The ndarray type does not have a median method, so values.median() does
+> > The ndarray type does not have a median method, so `values.median()` does
 > > not work.
 > > However, the numpy library does include the median function, which can be
 > > applied to an array.
