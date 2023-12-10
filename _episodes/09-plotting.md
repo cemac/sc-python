@@ -164,6 +164,78 @@ A colour scale is added using the function `plt.colorbar()`.
 > the screen, otherwise you may find a file with an empty plot.
 {: .callout}
 
+
+
+## Creating a figure containing multiple plots
+
+In the above examples, Matplotlib is automatically creating the figure and axes
+for each plot, but there are various ways in which these elements can be
+manually created where required.
+
+For example, the `plt.subplots()` function can be used to create a figure
+which contains multiple sets of axes.
+
+If we wished to create a figure containing two plots, we could use the command:
+
+~~~
+fig, ax = plt.subplots(nrows=2, ncols=1)
+~~~
+{: .language-python}
+
+![Empty subplots](../fig/9_subplots_1.png)
+
+This function returns two values, the figure, which we have stored as `fig`
+and the axes, which we have stored as `ax`.
+
+If we `print()` the `ax` variable, which should see that this is a list
+containing the axes we have requested:
+
+~~~
+fig, ax = plt.subplots(nrows=2, ncols=1)
+print(ax)
+~~~
+{: .language-python}
+~~~
+[<Axes: > <Axes: >]
+~~~
+{: .output}
+
+We can access each set of axes from the `ax` variable, and create a plot
+within.
+
+When plotting this way, we access the plotting functions (e.g. `plot()`,
+`scatter()`) as a method of the axes.
+
+We could create a figure containing subplots of `sin(x)` and `cos(x)` using
+the following method:
+
+~~~
+# create the figure and axes:
+fig, ax = plt.subplots(nrows=2, ncols=1)
+
+# access the first set of axes:
+ax0 = ax[0]
+# plot sin(x) in the first axes:
+ax0.plot(x, sin_x)
+# set the plot title:
+ax0.set_title('sin(x)')
+
+# axxess the second set of axes:
+ax1 = ax[1]
+# plot cos(x) in the second axes:
+ax1.plot(x, cos_x)
+# set the plot title:
+ax1.set_title('cos(x)')
+
+# set the figure title:
+fig.suptitle('plots of sin(x) and y(x)')
+# save the figure:
+fig.savefig('sin_and_cos_plots.png')
+~~~
+{: .language-python}
+
+![Sin and cos subplots](../fig/9_subplots_2.png)
+
 > ## Making your plots accessible
 >
 > Whenever you are generating plots to go into a paper or a presentation, there are a few things you can do to make sure that everyone can understand your plots.
