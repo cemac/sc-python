@@ -4,9 +4,17 @@ title: "Setup"
 
 ## Installing Anaconda / Miniconda
 
+The default Anaconda installation includes most of the packages required for the session.
+
+The additional components can be added from a terminal / Anaconda prompt window:
+
+~~~
+conda install -y -c conda-forge iris cartopy
+~~~
+
 Miniconda is a minimal version of the Anaconda software which includes enough components to create and manage different environments.
 
-For these sessions, we will create an environment containing all of the required components, and this can be done using either the full version of anaconda, or using Miniconda.
+It is possible to create a dedicated environment containing all of the required components for the session, and this can be done using either the full version of Anaconda, or using Miniconda.
 
 Miniconda installers can be found [here](https://docs.conda.io/en/latest/miniconda.html)
 
@@ -17,7 +25,7 @@ Notes for installing the full version of Anaconda can be found below.
 From a terminal / Anaconda prompt window, an environment containing all of the components which are required for these sessions can be created with the command:
 
 ~~~
-conda create -c conda-forge -n python_training jupyterlab numpy matplotlib pandas cartopy iris gdal
+conda create -c conda-forge -n python_training jupyterlab numpy matplotlib pandas iris cartopy
 ~~~
 
 Once the environment has been created, it can be activated with:
