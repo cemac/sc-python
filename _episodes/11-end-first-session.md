@@ -8,7 +8,7 @@ Before the next session, ensure all required Python libraries are installed, usi
 command line tool:
 
 ~~~
-conda install -c conda-forge gdal cartopy iris
+conda install -y -c conda-forge iris cartopy
 ~~~
 
 You may also wish to consider:

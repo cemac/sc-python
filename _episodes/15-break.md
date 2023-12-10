@@ -9,5 +9,5 @@ For the next session, we will need some additional Python libraries, which can b
 the `conda` command line tool:
 
 ~~~
-conda install -c conda-forge gdal cartopy iris
+conda install -y -c conda-forge iris cartopy
 ~~~

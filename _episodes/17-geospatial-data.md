@@ -19,7 +19,7 @@ The `conda` command line tool is used to manage packages and environments within
 From a terminal, or Anaconda prompt, the libraries we will be using can be installed with:
 
 ~~~
-conda install -c conda-forge gdal cartopy iris
+conda install -y -c conda-forge iris cartopy
 ~~~
 
 After installing these packages, it may be necessary to open a new terminal and launch a new Jupyter Lab session for things to work correctly.
