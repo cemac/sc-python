@@ -360,13 +360,13 @@ def plot_temp_diff(ann_data, hist_data, year):
     # Add gridlines to the map:
     map_axes.gridlines(draw_labels=True)
     # Plot the temperature data:
-    temp_plot = map_axes.pcolormesh(lons, lats, temp_diff, cmap='coolwarm', vmin=-4, vmax=4)
+    temp_plot = map_axes.pcolormesh(lons, lats, temp_diff, cmap='coolwarm')
     # Add coastlines to the map:
     map_axes.add_feature(cartopy.feature.COASTLINE)
     # Add a colour scale:
     cbar = plt.colorbar(temp_plot, orientation='horizontal', fraction=0.05)
     # Set the colour bar label:
-    cbar.set_label('temperature difference (K)')
+    cbar.set_label('temperature difference')
     # Set the plot title:
     map_axes.set_title(f'Temperature difference {year}, 1981-2010')
     # Display the plot:
@@ -374,12 +374,47 @@ def plot_temp_diff(ann_data, hist_data, year):
 ~~~
 {: .language-python}
 
-Once we have created the function, we can loop through the annual data and plot the difference between the temperature data for that year and the historical data.
+Once we have created the function, we can use this to plot the difference in the temperature data for a single year.
+
+The data for 2018 is the first time step in the annual data, so to plot the difference between the historical data and the data for 2018:
 
 ~~~
+plot_temp_diff(ann_temp.data[0], hist_temp_data, 2018)
+~~~
+{: .language-python}
+
+![Temperature Plot 3](../fig/17_temp_plot3.png)
+
+To plot the differences for all years, we can loop through the data.
+
+We can do this using the built in [`enumerate`](https://docs.python.org/3/library/functions.html#enumerate) function, which loops through a collection of items, and at each step of the loop provides the index and value, for example:
+
+~~~
+fruits = ['apples', 'bananas', 'raspberries']
+colours = ['green', 'yellow', 'red']
+
+for index, fruit in enumerate(fruits):
+    colour = colours[index]
+    print(fruit, 'are', colour)
+~~~
+{: .language-python}
+~~~
+apples are green
+bananas are yellow
+raspberries are red
+~~~
+{: .output}
+
+We will define a range of years for which we have data, and use the `enumerate` function to loop through this list, and plot the corresponding data.
+
+~~~
+# get a range of years for which we have data, 2018 to 2022:
 years = range(2018, 2023)
 
+# loop through the years using enumerate:
 for index, year in enumerate(years):
+    # plot the difference between the historical data and the annual data
+    # for this year:
     plot_temp_diff(ann_temp.data[index], hist_temp_data, year)
 ~~~
 {: .language-python}
@@ -399,7 +434,7 @@ for index, year in enumerate(years):
 > > {: .language-python}
 > >
 > > This should produce plots which all have the same colour bounds
-> > ![Temperature Plot 3](../fig/17_temp_plot3.png)
+> > ![Temperature Plot 4](../fig/17_temp_plot4.png)
 > {: .solution}
 {: .challenge}
 
@@ -418,7 +453,7 @@ for index, year in enumerate(years):
 > > ~~~
 > > {: .language-python}
 > >
-> > ![Temperature Plot 4](../fig/17_temp_plot4.png)
+> > ![Temperature Plot 5](../fig/17_temp_plot5.png)
 > {: .solution}
 {: .challenge}
 
@@ -443,6 +478,6 @@ for index, year in enumerate(years):
 > > temp_plot = map_axes.pcolormesh(lons, lats, temp_diff, cmap='coolwarm', vmin=-4, vmax=4, transform=cartopy.crs.PlateCarree())
 > > ~~~
 > > {: .language-python}
-> > ![Temperature Plot 5](../fig/17_temp_plot5.png)
+> > ![Temperature Plot 6](../fig/17_temp_plot6.png)
 > {: .solution}
 {: .challenge}
