@@ -22,12 +22,12 @@ keypoints:
 ~~~
 import numpy as np
 
-primes = np.array([2, 3, 5, 7, 9])
+primes = np.array([2, 3, 5, 7, 11])
 print(primes)
 ~~~
 {: .language-python}
 ~~~
-[2 3 5 7 9]
+[2 3 5 7 11]
 ~~~
 {: .output}
 
@@ -63,8 +63,8 @@ print(np.mean(primes))
 {: .language-python}
 ~~~
 2
-9
-5.2
+11
+5.6
 ~~~
 {: .output}
 
@@ -78,8 +78,8 @@ print(primes.mean())
 {: .language-python}
 ~~~
 2
-9
-5.2
+11
+5.6
 ~~~
 {: .output}
 
