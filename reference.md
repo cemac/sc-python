@@ -154,7 +154,7 @@ add_numbers(1, 4)
 - A local variable is defined in a function and can only be seen and used within that function.
 - A global variable is defined outside of a function and can be seen or used anywhere after definition.
 
-## [Programming Style]({{ page.root }}/18-style/)
+## [Programming Style]({{ page.root }}/19-style/)
 - Document your code.
 - Use clear and meaningful variable names.
 - Follow [the PEP8 style guide](https://www.python.org/dev/peps/pep-0008) when setting up your code.

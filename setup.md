@@ -4,9 +4,9 @@ title: "Setup"
 
 ## Installing Anaconda / Miniconda
 
-The default Anaconda installation includes most of the packages required for the session.
+The default Anaconda installation includes all of the packages required for the main part of the session.
 
-The additional components can be added from a terminal / Anaconda prompt window:
+The additional components required for the optionsl [Working with Geospatial Data]({{ page.root }}/18-geospatial-data/) section can be added from a terminal / Anaconda prompt window:
 
 ~~~
 conda install -y -c conda-forge iris cartopy
@@ -22,7 +22,7 @@ Notes for installing the full version of Anaconda can be found below.
 
 ## Creating an environment
 
-From a terminal / Anaconda prompt window, an environment containing all of the components which are required for these sessions can be created with the command:
+From a terminal / Anaconda prompt window, an environment containing all of the components which are required for all of the excercises can be created with the command:
 
 ~~~
 conda create -c conda-forge -n python_training jupyterlab numpy matplotlib pandas iris cartopy

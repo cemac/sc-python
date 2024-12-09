@@ -5,9 +5,3 @@ teaching: 0
 exercises: 0
 break: 10
 ---
-For the next session, we will need some additional Python libraries, which can be installed using
-the `conda` command line tool:
-
-~~~
-conda install -y -c conda-forge iris cartopy
-~~~

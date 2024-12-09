@@ -1,9 +1,10 @@
 ---
-title: "Working With Geospatial data"
+title: "Dictionaries and subplots"
 teaching: 20
 exercises: 15
 questions:
-- "How can I read in and plot geospatial data?"
+- "How can I store key-value data?"
+- "How can I create a figure containing multiple plots?"
 objectives:
 - "Read in data from NetCDF files"
 - "Plot data on a map"

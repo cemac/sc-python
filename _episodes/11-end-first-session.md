@@ -4,12 +4,6 @@ title: "End Of First Session"
 teaching: 45
 exercises: 0
 ---
-Before the next session, ensure all required Python libraries are installed, using the `conda`
-command line tool:
-
-~~~
-conda install -y -c conda-forge iris cartopy
-~~~
 
 You may also wish to consider:
 * What sort of packages might you use in Python and why would you use them?
