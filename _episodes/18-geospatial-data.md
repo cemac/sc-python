@@ -222,7 +222,7 @@ plt.colorbar()
 ~~~
 {: .language-python}
 
-![Temperature Plot 1](../fig/17_temp_plot1.png)
+![Temperature Plot 1](../fig/18_temp_plot1.png)
 
 ## Using Cartopy to plot data on a map
 
@@ -250,7 +250,7 @@ There are several other basic features which can be added to a map using Cartopy
 * OCEAN
 * RIVERS
 
-![Cartopy Plot 1](../fig/17_cartopy_plot1.png)
+![Cartopy Plot 1](../fig/18_cartopy_plot1.png)
 
 We have added gridlines to the map with `map_ax.gridlines()` function.
 
@@ -276,7 +276,7 @@ map_axes.set_title('Temperature 1981-2010')
 ~~~
 {: .language-python}
 
-![Temperature Plot 2](../fig/17_temp_plot2.png)
+![Temperature Plot 2](../fig/18_temp_plot2.png)
 
 There is now quite a lot going on to create the plot, and we can see how adding comments helps to keep track of what is being done.
 
@@ -383,7 +383,7 @@ plot_temp_diff(ann_temp.data[0], hist_temp_data, 2018)
 ~~~
 {: .language-python}
 
-![Temperature Plot 3](../fig/17_temp_plot3.png)
+![Temperature Plot 3](../fig/18_temp_plot3.png)
 
 To plot the differences for all years, we can loop through the data.
 
@@ -434,7 +434,7 @@ for index, year in enumerate(years):
 > > {: .language-python}
 > >
 > > This should produce plots which all have the same colour bounds
-> > ![Temperature Plot 4](../fig/17_temp_plot4.png)
+> > ![Temperature Plot 4](../fig/18_temp_plot4.png)
 > {: .solution}
 {: .challenge}
 
@@ -453,7 +453,7 @@ for index, year in enumerate(years):
 > > ~~~
 > > {: .language-python}
 > >
-> > ![Temperature Plot 5](../fig/17_temp_plot5.png)
+> > ![Temperature Plot 5](../fig/18_temp_plot5.png)
 > {: .solution}
 {: .challenge}
 
@@ -478,6 +478,6 @@ for index, year in enumerate(years):
 > > temp_plot = map_axes.pcolormesh(lons, lats, temp_diff, cmap='coolwarm', vmin=-4, vmax=4, transform=cartopy.crs.PlateCarree())
 > > ~~~
 > > {: .language-python}
-> > ![Temperature Plot 6](../fig/17_temp_plot6.png)
+> > ![Temperature Plot 6](../fig/18_temp_plot6.png)
 > {: .solution}
 {: .challenge}
