@@ -155,8 +155,8 @@ If we would like to create a single figure containing three plots, one for each 
 fig, axs = plt.subplots(nrows=1, ncols=3)
 
 # Set the figure size:
-fig.set_figwidth(12)
-fig.set_figheight(4)
+fig.set_figwidth(24)
+fig.set_figheight(8)
 
 # Plot June data
 # access the axes for this plot:
@@ -207,8 +207,8 @@ We can fix this by setting the y axis limits, using the [`set_ylim`](https://mat
 fig, axs = plt.subplots(nrows=1, ncols=3)
 
 # Set the figure size:
-fig.set_figwidth(12)
-fig.set_figheight(4)
+fig.set_figwidth(24)
+fig.set_figheight(8)
 
 # Plot June data
 # access the axes for this plot:
@@ -266,8 +266,8 @@ ax.set_title(month)
 > > fig, axs = plt.subplots(nrows=1, ncols=3)
 > > 
 > > # Set the figure size:
-> > fig.set_figwidth(12)
-> > fig.set_figheight(4)
+> > fig.set_figwidth(24)
+> > fig.set_figheight(8)
 > > 
 > > # Loop through dictionary keys, using the enumerate function:
 > > for index, month in enumerate(temp_files.keys()):
