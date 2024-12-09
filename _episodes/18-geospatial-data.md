@@ -214,7 +214,7 @@ print(hist_temp_data.shape)
 
 We have 360 longitude values, 181 latitude values and 360*181 temperature values.
 
-Previously we have created line plots. There are various ways to plot 2d data, and we will use the [`pcolormesh`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html) function to plot the temperature data:
+There are various ways to plot 2d data, and we will use the [`pcolormesh`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html) function to plot the temperature data:
 
 ~~~
 plt.pcolormesh(lons, lats, hist_temp_data, cmap='coolwarm')
