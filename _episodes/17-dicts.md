@@ -64,7 +64,7 @@ Ahmed
 ~~~
 {: .output}
 
-## Creating a dictionary
+## Updating a dictionary
 
 Let's create a dictionary, containing the details for multiple individuals, where the details for each individual are also stored as dictionaries:
 
