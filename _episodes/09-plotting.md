@@ -302,7 +302,7 @@ If we use Matplotlib's `contourf` function, we can include the x and y values in
 
 ~~~
 # Create filled contour plot using Matplob's contourf function:
-plt.contourf(x, y, z, cmap='RdBu')
+plt.contourf(x, y, z)
 # Add a colour bar:
 plt.colorbar()
 ~~~
