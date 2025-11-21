@@ -49,7 +49,7 @@ layout: reference
   - `help()` displays documentation for the function in the parenthesis.
     - Other ways to get help include holding down `shift` and pressing `tab` in Jupyter Notebooks.
 
-## [Lists]({{ page.root }}/06-lists/)
+## [Lists]({{ page.root }}/05-lists/)
 - Defined within `[...]` and separated by `,`.
   - An empty list can be created by using `[]`.
 - Can use `len(...)` to determine how many values are in a list.
