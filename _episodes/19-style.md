@@ -1,6 +1,6 @@
 ---
 title: "Programming Style"
-teaching: 10
+teaching: 5
 exercises: 0
 questions:
 - "How can I make my programs more readable?"

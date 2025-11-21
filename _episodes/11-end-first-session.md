@@ -1,7 +1,7 @@
 ---
 layout: end_session
 title: "End Of First Session"
-teaching: 45
+teaching: 40
 exercises: 0
 ---
 

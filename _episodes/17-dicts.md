@@ -1,7 +1,7 @@
 ---
 title: "Dictionaries"
-teaching: 20
-exercises: 15
+teaching: 15
+exercises: 10
 questions:
 - "How can I store key-value data?"
 objectives:

@@ -1,7 +1,7 @@
 ---
 title: "For Loops"
 teaching: 15
-exercises: 15
+exercises: 10
 questions:
 - "How can I make a program do many things?"
 objectives:
