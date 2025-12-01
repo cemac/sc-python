@@ -49,7 +49,7 @@ layout: reference
   - `help()` displays documentation for the function in the parenthesis.
     - Other ways to get help include holding down `shift` and pressing `tab` in Jupyter Notebooks.
 
-## [Lists]({{ page.root }}/05-lists/)
+## [Lists]({{ page.root }}/06-lists/)
 - Defined within `[...]` and separated by `,`.
   - An empty list can be created by using `[]`.
 - Can use `len(...)` to determine how many values are in a list.
@@ -89,7 +89,7 @@ plt.legend()
 ~~~
 {: .language-python}
 
-## [Reading Tabular Data with Pandas]({{ page.root }}/10-reading-tabular/)
+## [Reading Tabular Data with Pandas]({{ page.root }}/11-reading-tabular/)
 - Use the pandas library to do statistics on tabular data. Load with `import pandas as pd`.
   - To read in a csv: `pd.read_csv()`, including the path name in the parenthesis.
     - To specify a column's values should be used as row headings: `pd.read_csv('path', index_col='column name')`, where path and column name should be replaced with the relevant values.
@@ -111,7 +111,7 @@ for number in range(0,5):
 ~~~
 {: .language-python}
 
-## [Conditionals]({{ page.root }}/13-conditionals/)
+## [Conditionals]({{ page.root }}/14-conditionals/)
 - Defined similarly to a loop, using `if variable conditional value:`.
   - For example, `if variable > 5:`.
 - Use `elif:` for additional tests.
@@ -136,7 +136,7 @@ for m in [3, 6, 7, 2, 8]:
 ~~~
 {: .language-python}
 
-## [Writing Functions]({{ page.root }}/14-writing-functions/)
+## [Writing Functions]({{ page.root }}/15-writing-functions/)
 - Define a function using `def function_name(parameters):`. Replace `parameters` with the variables to use when the function is executed.
 - Run by using `function_name(parameters)`.
 - To return a result to the caller use `return ...` in the function.
