@@ -171,7 +171,7 @@ print(values[1, 2])
 > > {: .output}
 > > The ndarray type does not have a median method, so `values.median()` does
 > > not work.
-> > However, the numpy library does include the median function, which can be
+> > However, the numpy library does include the `median` function, which can be
 > > applied to an array.
 > {: .solution}
 {: .challenge}
