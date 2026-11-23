@@ -2,7 +2,7 @@
 title: "Setup"
 ---
 
-## Installing Anaconda / Miniconda
+## Installing Anaconda / Miniforge
 
 The default Anaconda installation includes all of the packages required for the main part of the session.
 
@@ -12,11 +12,11 @@ The additional components required for the optionsl [Working with Geospatial Dat
 conda install -y -c conda-forge iris cartopy
 ~~~
 
-Miniconda is a minimal version of the Anaconda software which includes enough components to create and manage different environments.
+Miniforge is a minimal version of the `conda` software which includes enough components to create and manage different environments, and only uses the `conda-forge` channel by default, which is more permissively licensed than the Anaconda `default` channel.
 
-It is possible to create a dedicated environment containing all of the required components for the session, and this can be done using either the full version of Anaconda, or using Miniconda.
+It is possible to create a dedicated environment containing all of the required components for the session, and this can be done using either the full version of Anaconda, or using Miniforge.
 
-Miniconda installers can be found [here](https://docs.conda.io/en/latest/miniconda.html)
+Miniforge installers can be found [here](https://conda-forge.org/miniforge/)
 
 Notes for installing the full version of Anaconda can be found below.
 
